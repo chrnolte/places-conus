@@ -1,5 +1,5 @@
 # PLACES CONUS
-### Land value models and estimates for the contiguous United States of America
+### Land value models and estimates for the contiguous United States (CONUS)
 
 **Documentation**: https://places-conus.readthedocs.io/en/latest/
 
@@ -16,3 +16,5 @@ Download or see previous estimates: https://placeslab.org/fmv-usa
 **Code contributors:** Adam Pollack, Shelby Sundquist, Ido Kushner
 
 The first phase of this research (Aug 1, 2022 - Sep 30, 2023) is made possible by Zillow Group, Inc., a U.S.-American real estate company, that gave academics, governments, and non-profits free access to its Transaction and Assessment Dataset (ZTRAX) (large-scale tax assessor and sales data) between 2016 and Sep 30, 2023 (http://www.zillow.com/ztrax). The results and opinions are those of the author(s) and do not reflect the position of Zillow Group.
+
+PLACES stands for "Private-Land Conservation Evidence System", the software platform we developed to aggregate parcel data at large scales, in order to study the dynamics, cost, and impact of land conservation initiatives in the United States.

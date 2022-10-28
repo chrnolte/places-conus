@@ -1,0 +1,79 @@
+PLACES CONUS
+============
+
+This is the documentation of data and methods used to develop estimates of the **fair market value of land** for vacant parcels in the contiguous United States (CONUS).
+
+The research was funded by the National Science Foundation's (NSF) Human-Environment and Geographical Sciences (HEGS) program (award `#2149243 <https://www.nsf.gov/awardsearch/showAward?AWD_ID=2149243>`_).
+
+PLACES, the "Private-Land Conservation Evidence System", is a parcel-level data synthesis platform developed to facilitate conservation planning at large scales and high resolutions through research into anticipated ecological, economic, and social effects of land policy and conservation interventions in the contiguous United States (CONUS).
+
+This is a ``code`` example
+
+``And here are
+multiple lines of code``
+
+* Here is a list
+* and another one
+
+  * We can even do nesting
+
+* But not everyone appreciates that
+
+1. And this is what I like more than anything else.
+2. This I don't like quite as much.
+
+#. This is a numbered list.
+#. It has two items too.
+
+term (up to a line of text)
+   Definition of the term, which must be indented
+
+   and can even consist of multiple paragraphs
+
+Now I would like to write something there
+
+  But this is a quote and it matters.
+
+  This matters are also as well.
+
+
+This is a normal text paragraph. The next paragraph is a code sample::
+
+   It is not processed in any way, except
+   that the indentation is removed.
+
+   It can span multiple lines.
+
+===================
+# This is a heading
+===================
+
+===================
+* This is a heading
+===================
+
+= This is a heading
+===================
+
+
+" This is a heading
+===================
+
+.. sectionauthor:: Christoph Nolte
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   methods/regions
+   methods/geoid
+   data/fmv
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

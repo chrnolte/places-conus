@@ -1,5 +1,6 @@
 .. _Methods_Home:
 
+Methods
 =======
 
 This is the description of how the estimates are generated.

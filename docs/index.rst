@@ -2,7 +2,7 @@ PLACES-FMV (CONUS)
 ==================
 
 .. warning::
-   This is a **beta version** (Nov 2, 2022). Most pages are placeholders.
+   This is a **beta version** (Nov 6, 2022). Most pages are placeholders.
 
    Follow on Github: `<https://github.com/chrnolte/places-conus>`_
 
@@ -15,7 +15,7 @@ Government, academic, and non-profit analysts will be able to access the data vo
 The research is conducted at Boston University's `PLACES lab <https://placeslab.org>`_ [#f1]_ and supported by the National Science Foundation's (NSF) Human-Environment and Geographical Sciences program [#f2]_.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Contents
 
    about

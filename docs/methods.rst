@@ -10,8 +10,5 @@ This is the description of how the estimates are generated.
    :caption: Chapters
 
    methods/overview
-   methods/submarkets
-   methods/estimators
-   methods/feature_selection
-   methods/uncertainty
+   methods/estimation
    methods/validation

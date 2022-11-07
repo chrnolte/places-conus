@@ -23,9 +23,6 @@ Terrain
 
    Geoprocessing: mean of pixel values of elevation (in meters) within parcels, at 0.00449 degrees resolution (EPSG:4326).
 
-   .. warning::
-
-      This might have been incorrectly computed.
 
 *********
 Hydrology
@@ -52,6 +49,12 @@ Hydrology
    Estimated lake frontage (in meters) to the closest lake waterbody in the National Hydrographic Database (NHD).
 
    Geoprocessing: total area of intersections of the parcel polygon with 50-meter-buffers around NHD lakes, divided by the buffer width (50m).
+
+.. attribute:: water_exposure
+
+   Sum of river and lake frontage, normalized by parcel size
+
+   :any:`river_frontage` / :any:`ha` + :any:`lake_frontage` / :any:`ha`
 
 .. attribute:: p_wet
 
@@ -140,25 +143,21 @@ Microsoft’s open-source building footprint dataset contains polygons of 125.2 
    Geoprocessing: rasterization of building footprints, pixel-based computation of average building footprint presence within circular neighborhood (2D convolution with moving-window kernel), averaged across all pixels within each parcel (zonal statistics).
 
 
-******
-People
-******
+************
+Demographics
+************
 
-.. _hh_inc_med_bg_2012_2016:
-
-.. data:: 'hh_inc_med_bg_2012-2016'
-
-   I tried.
-
-'hh_inc_med_bg_2012_2016'_
-
-.. attribute:: hh_inc_med_bg_2012-2016
+.. attribute:: hh_inc_med_bg_2012_2016
 
    Median household income at the census block-group level (2012-2016)
 
    Source: American Community Survey, via the National Historical Geographic Information System (NHGIS)
 
    Geoprocessing: spatial joins.
+
+   .. note::
+
+      The actual name of this variable in the PLACES database is ``hh_inc_med_bg_2012-2016``. Leaving this here until I figure out how to let reStructuredText accept the '-' in the variable name.
 
 
 .. attribute:: bld_pop_exp_c4
@@ -175,25 +174,33 @@ People
 Infrastructure
 **************
 
-.. attribute:: `rd_dist_pvd+`
+.. _rd_dist_pvd+:
 
-   Distance to nearest paved road (including highways)
+.. attribute:: rd_dist_pvd
+
+   Distance to nearest paved road **excluding** highways (meters).
+
+   ``rd_dist_pvd+``: Distance to nearest paved road **including** highways (meters).
 
    Source: TIGER/Line shapefiles from the U.S. Census Bureau.
 
 
 .. attribute:: travel
 
-   Travel time to major cities (in minutes)
+   Travel time to major cities (minutes), ca. 2000
 
-   Source: Joint Research Center of the European Commission (Nelson 2007)
+   Source: European Commission & World Bank. Download: `Nelson 2007 <https://forobs.jrc.ec.europa.eu/products/gam/>`_
+
+   .. note::
+
+         This dataset was computed with different specifications than :any:`travel_weiss`. The two are not intercomparable. Differences do not necessarily reflect change over time.
 
 
 .. attribute:: travel_weiss
 
-   Travel time to major cities (in minutes)
+   Travel time to major cities (minutes), ca. 2015
 
-   Source: Weiss et al. 2017
+   Source: `Weiss et al. 2017 Nature <https://www.nature.com/articles/nature25181>`_
 
 
 ***************

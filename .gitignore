@@ -1,0 +1,9 @@
+_
+__pycache__
+docs/_build
+docs/make.bat
+docs/Makefile
+*.swp
+*.pyc
+.DS_Store
+.ipynb_checkpoints

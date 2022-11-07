@@ -15,7 +15,7 @@ Government, academic, and non-profit analysts will be able to access the data vo
 The research is conducted at Boston University's `PLACES lab <https://placeslab.org>`_ [#f1]_ and supported by the National Science Foundation's (NSF) Human-Environment and Geographical Sciences program [#f2]_.
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    :caption: Contents
 
    about

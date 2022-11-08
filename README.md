@@ -1,9 +1,9 @@
-# PLACES CONUS
+# PLACES-FMV (CONUS)
 ### Land value models and estimates for the contiguous United States
 
 **Documentation**: https://places-conus.readthedocs.io/en/latest
 
-This repository documents the data, methods, and code to use and reproduce statistical models and parcel-level estimates of the **fair market value of land** for vacant parcels in the contiguous United States (CONUS) with accuracy metrics.
+This repository documents the data, methods, and code to use and reproduce statistical models and parcel-level estimates of the **fair market value (FMV) of land** for vacant parcels in the contiguous United States (CONUS) with accuracy metrics.
 
 This is active research (2022-2026), funded by the National Science Foundation's (NSF) Human-Environment and Geographical Sciences (HEGS) program (award [#2149243](https://www.nsf.gov/awardsearch/showAward?AWD_ID=2149243)).
 

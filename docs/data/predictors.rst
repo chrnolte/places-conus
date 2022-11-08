@@ -32,7 +32,7 @@ Hydrology
 
    Percentage (0-100) of coastal waters within a 50m radius. Used as proxy for beachfront properties and boating access.
 
-   Source: ESRI North America Water Polygons
+   * **Source**: ESRI North America Water Polygons
 
 .. attribute:: cst_2500
 
@@ -42,29 +42,39 @@ Hydrology
 
    Estimated total frontage (in meters) of the parcel along lake waterbodies from the National Hydrographic Database (NHD).
 
+   * **Source**: NHDPlus High Resolution
+   * **Access**: https://www.usgs.gov/national-hydrography/nhdplus-high-resolution
+   * **Accessed**: Jun 18, 2019
+
    Geoprocessing: total area of intersections of the parcel polygon with 50-meter-buffers around NHD lakes, divided by the buffer width (50m).
 
 .. attribute:: river_frontage
 
    Estimated lake frontage (in meters) to the closest lake waterbody in the National Hydrographic Database (NHD).
 
+   * **Source**: see :any:`lake_frontage`
+
    Geoprocessing: total area of intersections of the parcel polygon with 50-meter-buffers around NHD lakes, divided by the buffer width (50m).
 
 .. attribute:: water_exposure
 
-   Sum of river and lake frontage, normalized by parcel size
-
-   :any:`river_frontage` / :any:`ha` + :any:`lake_frontage` / :any:`ha`
+   Sum of :any:`river_frontage` and :any:`lake_frontage`, divided by parcel size (:any:`ha`).
 
 .. attribute:: p_wet
 
-   Percentage (0-100) of parcel area covered by wetland polygons from the US Fish and Wildlife Service National Wetlands Inventory (39).
+   Percentage (0-100) of parcel area covered by wetland polygons.
+
+   * **Source**: National Wetlands Inventory (NWI), U.S. Fish & Wildlife Service
+   * **Access**: `<https://www.fws.gov/program/national-wetlands-inventory/wetlands-data>`_
+   * **Accessed**: Jun 18, 2019
 
 .. attribute:: fld_fr_fath_p100
 
    Flood risk: average meters of inundation depth within the 1% annual exceedance probability floodplain (pluvial floods).
 
-   Source: Fathom
+   * **Source**: Fathom-US Flood Hazard data (`Wing et al 2018 <https://iopscience.iop.org/article/10.1088/1748-9326/aaac65>`_)
+   * **Access**: `<https://www.fathom.global/product/flood-hazard-data-maps/fathom-us/>`_
+   * **Accessed**: Mar 26, 2020
 
    .. warning::
 
@@ -74,7 +84,7 @@ Hydrology
 
    Flood risk: average meters of inundation depth within the 1% annual exceedance probability floodplain (fluvial floods).
 
-   Source: Fathom
+   Source: as :any:fld_fr_fath_p100
 
    .. warning::
 
@@ -85,7 +95,8 @@ Hydrology
 Land cover
 **********
 
-Source: National Land Cover Database, Year-2011 Land Cover (edition: 2014-10-10)
+* **Source**: National Land Cover Database, Year-2011 Land Cover (Edition 2014-10-10)
+* **Access**: `<https://www.mrlc.gov/data>`_
 
 
 .. attribute:: p_forest
@@ -122,7 +133,17 @@ Source: National Land Cover Database, Year-2011 Land Cover (edition: 2014-10-10)
 Buildings
 *********
 
-Microsoft’s open-source building footprint dataset contains polygons of 125.2 million buildings.
+The following indicators are derived from Microsoft’s open-source USBuildingFootprints<https://github.com/microsoft/USBuildingFootprints>`_ dataset, which contains polygons of 125.2 million buildings inferred from high-resolution satellite imagery with neural networks.
+
+* **Access**: `<https://github.com/microsoft/USBuildingFootprints>`_
+* **Accessed**: Dec 6, 2019
+
+.. important::
+
+   Microsoft's building footprints are currently our preferred open-source measure of the **presence of buildings** in CONUS as they are more broadly and consistently available than other indicators. However, the use of building footprints can introduce its own sources of error. For instance, footprints under trees are often missed. For more information, please visit the **Source** URL listed above.
+
+   Alternative measures of building presence are available in tax assessor and parcel boundary datasets, but usually not consistent across states and counties. For a comparison of indicators of CONUS-wide building presence, see `Nolte et al. (2021) <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3900806>`_ (Figure S14).
+
 
 .. attribute:: n_bld_fp
 
@@ -151,13 +172,13 @@ Demographics
 
    Median household income at the census block-group level (2012-2016)
 
-   Source: American Community Survey, via the National Historical Geographic Information System (NHGIS)
+   **Source**: American Community Survey, via the National Historical Geographic Information System (NHGIS)
+   **Access**: `<https://www.nhgis.org/>`_
+   **Geoprocessing**: spatial joins of parcel centroids with reference units.
 
-   Geoprocessing: spatial joins.
+   .. caution::
 
-   .. note::
-
-      The actual name of this variable in the PLACES database is ``hh_inc_med_bg_2012-2016``. Leaving this here until I figure out how to let reStructuredText accept the '-' in the variable name.
+      The actual name of this variable in the PLACES database is ``hh_inc_med_bg_2012-2016`` (but hyphens weren't allowed for Python attributes in reStructredText).
 
 
 .. attribute:: bld_pop_exp_c4
@@ -182,16 +203,17 @@ Infrastructure
 
    ``rd_dist_pvd+``: Distance to nearest paved road **including** highways (meters).
 
-   Source: TIGER/Line shapefiles from the U.S. Census Bureau.
+   * **Source**: TIGER/Line shapefiles from the U.S. Census Bureau.
 
 
 .. attribute:: travel
 
    Travel time to major cities (minutes), ca. 2000
 
-   Source: European Commission & World Bank. Download: `Nelson 2007 <https://forobs.jrc.ec.europa.eu/products/gam/>`_
+   * **Source**: European Commission & World Bank (Nelson 2007)
+   * **Access**: `<https://forobs.jrc.ec.europa.eu/products/gam/>`_
 
-   .. note::
+   .. important::
 
          This dataset was computed with different specifications than :any:`travel_weiss`. The two are not intercomparable. Differences do not necessarily reflect change over time.
 
@@ -200,7 +222,8 @@ Infrastructure
 
    Travel time to major cities (minutes), ca. 2015
 
-   Source: `Weiss et al. 2017 Nature <https://www.nature.com/articles/nature25181>`_
+   * **Source**: Weiss et al. 2017 *Nature*
+   * **Access**: `<https://www.nature.com/articles/nature25181>`_
 
 
 ***************

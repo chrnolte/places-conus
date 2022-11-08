@@ -7,5 +7,6 @@ PLACES-FMV (CONUS) models are defined by:
 
 * The :any:`Submarkets` for which they observe sales and make predictions.
 * The statistical :any:`Estimators` they use.
-* The :any:`Feature sets` they see.
+* The :any:`Predictor sets` they see.
+
 

@@ -42,6 +42,6 @@ Code contributors
 
 PLACES-FMV would not exist without support of:
 
-* Adam Pollack, PhD student, Boston University
-* Shelby Sundquist, undergraduate, Boston University
-* Ido Kushner, undergraduate, Boston University
+* Adam Pollack, former PhD student, Boston University
+* Shelby Sundquist, former undergraduate, Boston University
+* Ido Kushner, former undergraduate, Boston University

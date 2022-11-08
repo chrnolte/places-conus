@@ -9,5 +9,5 @@ This is the description of how the estimates are generated.
    estimation/models
    estimation/submarkets
    estimation/estimators
-   estimation/feature_sets
+   estimation/predictor_sets
    estimation/uncertainty

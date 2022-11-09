@@ -13,7 +13,7 @@ Download previous estimates: https://placeslab.org/fmv-usa
 
 **Investigators:** Christoph Nolte (PI), Casey Rozowski, Payal Shah
 
-**Code contributors:** Adam Pollack, Shelby Sundquist, Ido Kushner
+**Code contributors:** Adam Pollack, Yuhe Chang, Shelby Sundquist, Ido Kushner
 
 *The first phase of this research (Aug 1, 2022 - Sep 30, 2023) is made possible by Zillow Group, Inc, a U.S. real estate company, that gave academics, governments, and non-profits free access to its Transaction and Assessment Dataset (ZTRAX) (large-scale tax assessor and sales data) between 2016 and Sep 30, 2023 (http://www.zillow.com/ztrax). The results and opinions are those of the author(s) and do not reflect the position of Zillow Group.*
 

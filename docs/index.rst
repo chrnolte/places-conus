@@ -2,7 +2,7 @@ PLACES-FMV (CONUS)
 ==================
 
 .. warning::
-   This is a **beta version** (Nov 6, 2022). Most pages are placeholders.
+   This is an early **beta version** for collaborators (Nov 6, 2022).
 
    Follow on Github: `<https://github.com/chrnolte/places-conus>`_
 

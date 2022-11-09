@@ -22,8 +22,8 @@ Where:
 * :math:`\alpha` is an intercept
 * :math:`X_i` is a set of :ref:`Predictors`
 
-  * :any:`hh_inc_med_bg_2012_2016`
-  * :ref:`rd_dist_pvd+ <rd_dist_pvd+>`
+  * :aluna:ref:`hh_inc_med_bg_2012-2016`
+  * :aluna:ref:`rd_dst_pvd+`
   * :any:`p_wet`
   * :any:`p_forest`
   * :any:`p_crops`
@@ -33,7 +33,6 @@ Where:
   * :any:`water_exposure`
   * :any:`cst_2500`
   * :any:`cst_50`
-
 * :math:`\mu_j` are dummies for :ref:`Regions`
 * :math:`\tau_t` are year-quarter dummies.
 * :math:`\varepsilon_{ijt}` is assumed to be a normally distributed error

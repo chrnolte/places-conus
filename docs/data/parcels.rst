@@ -16,7 +16,7 @@ For the remaining counties, we use nationwide parcel data from **Regrid**. Throu
 Parcel data attributes
 **********************
 
-PLACES generates hundreds of variables for each parcel (see :ref:`Features`)
+PLACES generates hundreds of variables for each parcel (see :ref:`Predictors`)
 
 We only obtain a few directly from the parcel boundary input data:
 

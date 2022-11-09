@@ -1,3 +1,7 @@
+import os
+import sys
+import sphinx_rtd_theme
+
 # Configuration file for the Sphinx documentation builder.
 #
 # For the full list of built-in configuration values, see the documentation:
@@ -11,13 +15,14 @@ copyright = '2022, Christoph Nolte'
 author = 'Christoph Nolte'
 release = '0.1'
 
-
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-import sphinx_rtd_theme
+sys.path.append(os.path.abspath("./_ext"))
 
-extensions = ['sphinx_rtd_theme', 'sphinx.ext.autosectionlabel']
+extensions = ['sphinx_rtd_theme', 'sphinx.ext.autosectionlabel', 'todo', 'aluna']
+
+todo_include_todos = True
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']

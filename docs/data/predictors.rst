@@ -11,15 +11,15 @@ Terrain
 
    Average slope of parcel (degrees).
 
-   :Source: USGS National Elevation Dataset (NED) 1/3 Arc-Second [deprecated]
-   :Geoprocessing: zonal statistics mean of pixel-level values of slope (in degrees), computed at 30m resolution in Google Earth Engine (EPSG:5070).
+   :Source: USGS National Elevation Dataset (NED) 1/3 Arc-Second
+   :Geoprocessing: Mean of pixel values within parcel (zonal statistics). Slope computed at 30m resolution in Google Earth Engine (EPSG:5070).
 
 .. attribute:: elev
 
    Average elevation of parcel (meters).
 
-   :Source: USGS National Elevation Dataset (NED) 1/3 Arc-Second [deprecated]
-   :Geoprocessing: Mean of pixel values of elevation (in meters) within parcels, at 0.00449 degrees resolution (EPSG:4326).
+   :Source: USGS National Elevation Dataset (NED) 1/3 Arc-Second
+   :Geoprocessing: Mean of pixel values within parcel (zonal statistics). Elevation raster exported at 0.00449 degrees resolution from Google Earth Engine (EPSG:4326).
 
 
 *********
@@ -40,19 +40,19 @@ Hydrology
 
 .. attribute:: lake_frontage
 
-   Estimated total frontage (in meters) of the parcel along lake waterbodies from the National Hydrographic Database (NHD).
+   Estimated total lake frontage of the parcel (in meters).
 
-   :Source: NHDPlus High Resolution
+   :Source: National Hydrographic  waterbodies from the National Hydrographic Database (NHD)NHDPlus High Resolution
    :Access: https://www.usgs.gov/national-hydrography/nhdplus-high-resolution
    :Accessed: Jun 18, 2019
-   :Geoprocessing: total area of intersections of the parcel polygon with 50-meter-buffers around NHD lakes, divided by the buffer width (50m).
+   :Geoprocessing: Total area of intersection of parcel polygon with 50-meter-buffers around NHD lake waterbodies, divided by the buffer width (50m).
 
 .. attribute:: river_frontage
 
-   Estimated lake frontage (in meters) to the closest lake waterbody in the National Hydrographic Database (NHD).
+   Estimated total river frontage of the parcel (in meters). Only waterbody polygons from the NHD are included (no lines).
 
    :Source: same as :any:`lake_frontage`
-   :Geoprocessing: total area of intersections of the parcel polygon with 50-meter-buffers around NHD lakes, divided by the buffer width (50m).
+   :Geoprocessing: Total area of intersection of parcel polygon with 50-meter-buffers around NHD river waterbodies, divided by the buffer width (50m).
 
 .. attribute:: water_exposure
 
@@ -63,7 +63,7 @@ Hydrology
    Percentage (0-100) of parcel area covered by wetland polygons.
 
    :Source: National Wetlands Inventory (NWI), U.S. Fish & Wildlife Service
-   :Access: `<https://www.fws.gov/program/national-wetlands-inventory/wetlands-data>`_
+   :Access: https://www.fws.gov/program/national-wetlands-inventory/wetlands-data
    :Accessed: Jun 18, 2019
 
 .. attribute:: fld_fr_fath_p100
@@ -71,7 +71,7 @@ Hydrology
    Flood risk: average meters of inundation depth within the 1% annual exceedance probability floodplain (pluvial floods).
 
    :Source: Fathom-US Flood Hazard data (`Wing et al 2018 <https://iopscience.iop.org/article/10.1088/1748-9326/aaac65>`_)
-   :Access: `<https://www.fathom.global/product/flood-hazard-data-maps/fathom-us/>`_
+   :Access: https://www.fathom.global/product/flood-hazard-data-maps/fathom-us/ (licensed)
    :Accessed: Mar 26, 2020
 
    .. warning::
@@ -193,7 +193,9 @@ Infrastructure
 
    Distance to nearest paved road, including highways (meters).
 
-   :Source: TIGER/Line shapefiles from the U.S. Census Bureau.
+   :Source: TIGER/Line shapefiles from the U.S. Census Bureau for the year 2019
+   :Access: `<https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html>`_
+   :Accessed: Sept 10, 2020
 
 
 .. attribute:: travel

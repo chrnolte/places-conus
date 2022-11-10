@@ -2,13 +2,15 @@ PLACES-FMV (CONUS)
 ==================
 
 .. warning::
-   This is an early **beta version** for collaborators (Nov 6, 2022).
+   This is a **beta version**, prepared to enhance the transparency across all our communications with our research team, collaborator panel, data partners, and early adopters.
 
-   Follow on Github: `<https://github.com/chrnolte/places-conus>`_
+   You'll find pages under constructions, test text, and early statements that we might have to recall.
+
+   Get updates on Github: `<https://github.com/chrnolte/places-conus>`_
 
 This is the **documentation** and **user's guide** for the PLACES-FMV (CONUS) data release.
 
-PLACES-FMV (CONUS) is a set of parcel-level estimates of the **fair market value (FMV) of vacant lands** in the contiguous United States (CONUS). The estimates are derived statistically from data on 1.3 million vacant land sales (2000-2021) using an ensemble of simple, scalable, locally responsive predictive model specifications.
+PLACES-FMV (CONUS) is a dataset of parcel-level estimates of the **fair market value (FMV) of vacant lands** in the contiguous United States (CONUS). The estimates are derived statistically from training data on 1.3 million vacant land sales (2000-2021) using an ensemble of relatively simple, scalable, and locally responsive models.
 
 Government, academic, and non-profit analysts will be able to access the data volume at no cost through the Inter-university Consortium for Political and Social Research (`ICPSR <https://www.icpsr.umich.edu/web/pages/>`_). The planned release date is Jun 30, 2023; early adopters can join by Jan 15, 2023.
 
@@ -16,7 +18,7 @@ The research is conducted at Boston University's `PLACES lab <https://placeslab.
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents
+   :caption: Overview
 
    about
    data

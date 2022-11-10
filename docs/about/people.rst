@@ -40,8 +40,9 @@ The collaborator panel advises the Investigators in the development of the resea
 Code contributors
 *****************
 
-PLACES-FMV would not exist without support of:
+PLACES-FMV would not exist without the support of:
 
-* Adam Pollack, former PhD student, Boston University
-* Shelby Sundquist, former undergraduate, Boston University
+* Adam Pollack, former PhD student, Boston University, now postdoc at Dartmouth.
+* Yuhe Chang, current PhD student, Boston University
+* Shelby Sundquist, former undergraduate, Boston University, now PhD student at North Arizona University
 * Ido Kushner, former undergraduate, Boston University

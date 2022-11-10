@@ -64,5 +64,5 @@ Omitted
 For non-vacant parcels ("PLACES FMV: all" in `Nolte (2020) <https://www.pnas.org/doi/10.1073/pnas.2012865117>`_):
 
 * Land cover: ``dev_intensity`` (was part of the  model that included non-vacant parcels)
-* Buildings on parcel (0 for all vacant parcels): :any:``p_bld_fp``
+* Buildings on parcel (0 for all vacant parcels): ``p_bld_fp``
 

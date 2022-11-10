@@ -155,7 +155,7 @@ All of the following indicators are derived from Microsoft’s open-source `USBu
 
    :Geoprocessing: polygon intersections.
 
-.. aluna:aluna:: p_bld_fp_<radius>
+.. aluna:aluna:: p_bld_fp_*
 
    Percentage of area within the given ``radius`` (integer, meters) that is covered by building footprints. An indicator of nearby building density.
 
@@ -164,11 +164,11 @@ All of the following indicators are derived from Microsoft’s open-source `USBu
 
 .. attribute:: p_bld_fp_500
 
-   See aluna:ref:`p_bld_fp_<radius>`
+   See :aluna:ref:`p_bld_fp_*`
 
 .. attribute:: p_bld_fp_5000
 
-   See aluna:ref:`p_bld_fp_<radius>`
+   See :aluna:ref:`p_bld_fp_*`
 
 
 
@@ -207,9 +207,9 @@ Infrastructure
    :Access: `<https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html>`_
    :Accessed: Sept 10, 2020
 
-   ..important ::
+   .. important ::
 
-     Only computed up to 3km
+      Only computed up to 3km.
 
 .. attribute:: travel
 
@@ -235,8 +235,11 @@ Infrastructure
 Land protection
 ***************
 
-.. attribute:: p_prot_<radius>_<year>
+.. attribute:: p_prot_2010_5000
 
+   See :aluna:ref:`p_prot_*_*`
+
+.. attribute:: p_prot_*_*
 
    Percentage of area within a given <radius> (in meters) that is protected by fee or conservation easement in a given <year>.
 

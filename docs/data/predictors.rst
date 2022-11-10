@@ -162,6 +162,16 @@ All of the following indicators are derived from Microsoft’s open-source `USBu
    :Geoprocessing: rasterization of building footprints, pixel-based computation of average building footprint presence within circular neighborhood (2D convolution with moving-window kernel), averaged across all pixels within each parcel (zonal statistics).
 
 
+.. attribute:: p_bld_fp_500
+
+   See aluna:ref:`p_bld_fp_<radius>`
+
+.. attribute:: p_bld_fp_5000
+
+   See aluna:ref:`p_bld_fp_<radius>`
+
+
+
 ************
 Demographics
 ************
@@ -197,6 +207,9 @@ Infrastructure
    :Access: `<https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html>`_
    :Accessed: Sept 10, 2020
 
+   ..important ::
+
+     Only computed up to 3km
 
 .. attribute:: travel
 
@@ -241,3 +254,12 @@ Land protection
       Clarify access to COMaP-derived indicators.
 
 
+****
+Time
+****
+
+.. attribute:: year_cont
+
+   Continuous time of sale (years). Exists only in `Transactions`.
+
+   :Source: Sales transaction data.

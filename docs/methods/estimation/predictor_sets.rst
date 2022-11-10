@@ -26,7 +26,8 @@ Public
 * Nearby protection: :any:`p_prot_2010_5000`
 
 Public for open-source parcels
-#########################
+##############################
+
 * Parcel coordinates: :any:`x`, :any:`y`
 * Parcel size: :any:`ha` - from parcel boundary data
 
@@ -62,6 +63,6 @@ Omitted
 
 For non-vacant parcels ("PLACES FMV: all" in `Nolte (2020) <https://www.pnas.org/doi/10.1073/pnas.2012865117>`_):
 
-* Land cover: :any:`dev_intensity` (was part of the  model that included non-vacant parcels)
-* Buildings on parcel (0 for all vacant parcels): :any:`p_bld_fp`
+* Land cover: ``dev_intensity`` (was part of the  model that included non-vacant parcels)
+* Buildings on parcel (0 for all vacant parcels): :any:``p_bld_fp``
 

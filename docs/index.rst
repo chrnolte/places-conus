@@ -2,9 +2,7 @@ PLACES-FMV (CONUS)
 ==================
 
 .. warning::
-   This is a **beta version**, prepared to enhance the transparency across all our communications with our research team, collaborator panel, data partners, and early adopters.
-
-   You'll find pages under constructions, test text, and early statements that we might have to recall.
+   This is a draft and **beta version**, intended for communications with our research team, collaborator panel, data partners, and early adopters.
 
    Get updates on Github: `<https://github.com/chrnolte/places-conus>`_
 

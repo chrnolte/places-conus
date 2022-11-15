@@ -3,11 +3,9 @@ Predictor sets
 
 Predictors sets are named sets (combinations) of :any:`Predictors` used in estimation.
 
-Each `Model <#Models>`_ is trained on a specific predictor set. Because the choice of predictor set affects predictions and model performance, our approach compares several predictor selection strategies (top-down choices vs. forward-feature selection through cross-validation).
+Each `Model <#Models>`_ is trained on a given predictor set.
 
-.. note::
-
-   This section is still very much under development.
+We vary predictor sets across models to study how predictor selection affects model performance and predictions.
 
 
 ********************
@@ -25,8 +23,10 @@ Public
 * Nearby development: :any:`p_bld_fp_500`, :any:`p_bld_fp_5000`
 * Nearby protection: :any:`p_prot_2010_5000`
 
-Public for open-source parcels
-##############################
+Partially public
+################
+
+The following predictors are derived from the parcel boundary data. They are publicly accessible only for counties in which we have access to open-source parcel data (see :any:`Parcel data sources`).
 
 * Parcel coordinates: :any:`x`, :any:`y`
 * Parcel size: :any:`ha` - from parcel boundary data
@@ -48,14 +48,16 @@ To improve the spatial and temporal prediction capacities of the Predictor sets,
 
 The algorithm iteratively selects and adds predictors to the set as a function of how well the addition improve predictive accuracy.
 
+.. todo:: Explain use of spatial predictors.
 
-Currently implemented:
+Implemented:
 
 * Spatial cross-validation (3 x 3 in-region quantiles of sales data)
 
-.. warning::
+Not yet implemented:
 
-   No temporal cross-validation yet.
+* Temporal (predictive) cross-validation.
+* Spatiotemporal cross-validation.
 
 
 Omitted

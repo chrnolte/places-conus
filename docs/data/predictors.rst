@@ -1,7 +1,11 @@
 Predictors
 ==========
 
-This is the list of variables used as predictors in the estimation of fair market value.
+This is the list of **parcel-level predictors** for our :any:`Models` of fair market value (FMV).
+
+They are derived from CONUS-wide spatial datasets and geo-located :ref:`parcel boundaries <Parcels>`.
+
+:ref:`Models` are trained on *combinations* of these predictors called :ref:`Predictor sets`. These can also include predictors from :any:`Transactions` (e.g., :any:`date`) and :any:`Parcels` (e.g., :any:`x`, :any:`y`:, :any:`ha`).
 
 *******
 Terrain
@@ -73,6 +77,7 @@ Hydrology
    :Source: Fathom-US Flood Hazard data (`Wing et al 2018 <https://iopscience.iop.org/article/10.1088/1748-9326/aaac65>`_)
    :Access: https://www.fathom.global/product/flood-hazard-data-maps/fathom-us/ (licensed)
    :Accessed: Mar 26, 2020
+   :Geoprocessing: Zonal statistics (mean)
 
    .. warning::
 
@@ -138,9 +143,11 @@ All of the following indicators are derived from Microsoft’s open-source `USBu
 
 .. important::
 
-   Microsoft's building footprints are our preferred open-source metric for the **presence of buildings** in CONUS, as they are more broadly and consistently available than other indicators (e.g., tax assessor data). However, the use of building footprints can introduce its own sources of error. For instance, footprints under trees are often missed. For more information, please refer to the `USBuildingFootprints documentation on Github <https://github.com/microsoft/USBuildingFootprints>`_
+   Microsoft's building footprints are our preferred open-source metric for the **presence of buildings** in CONUS, as they are more consistently available across CONUS than other indicators (e.g., tax assessor data). However, building footprints introduce new sources of error. For instance, footprints under trees are often missed.
 
-   Alternative measures of building presence are available in tax assessor and parcel boundary datasets, but usually not consistent across states and counties. For a comparison of indicators of CONUS-wide building presence, see `Nolte et al. (2021) <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3900806>`_ (Figure S14).
+   For more information, please refer to the `USBuildingFootprints documentation <https://github.com/microsoft/USBuildingFootprints>`_.
+
+   Alternative measures of building presence are available in tax assessor and parcel boundary datasets. However, their availability and quality varies across states and counties. See `Nolte et al. (2021) <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3900806>`_ (Fig. S14) for a comparison of CONUS-wide building datasets.
 
 
 .. attribute:: n_bld_fp
@@ -255,14 +262,3 @@ Land protection
    .. warning::
 
       Clarify access to COMaP-derived indicators.
-
-
-****
-Time
-****
-
-.. attribute:: year_cont
-
-   Continuous time of sale (years). Exists only in `Transactions`.
-
-   :Source: Sales transaction data.

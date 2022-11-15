@@ -21,7 +21,7 @@ The research is conducted at Boston University's `PLACES lab <https://placeslab.
    about
    data
    methods
-   estimates
+   products
 
 :ref:`genindex`
 

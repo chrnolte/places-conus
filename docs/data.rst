@@ -1,7 +1,7 @@
 Data
 ====
 
-This section describes all datasets used in the estimation of PLACES FMV (CONUS).
+This section describes the input datasets used in the estimation of PLACES FMV (CONUS).
 
 .. toctree::
    :maxdepth: 2

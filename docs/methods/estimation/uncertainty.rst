@@ -5,9 +5,9 @@ Uncertainty
 
    This section is still very much under development.
 
-===============================
-Model-level uncertainty metrics
-===============================
+=======================
+Model-level uncertainty
+=======================
 
 Uncertainty metrics we plan to publish for each :ref:`Model <Models>` include:
 
@@ -40,21 +40,25 @@ We plan to compute prediction intervals at confidence levels of 50%, 75%, 90%, 9
 Statistical support
 ###################
 
-Parcel-level metrics that offer users a measure of statistical support, i.e., an answer to the question: how similar is the parcel for which this estimate was predicted from the parcels on which the :ref:`Model <Models>` was trained.
+Parcel-level metrics that offer users a measure of statistical support, i.e., an answer to the question: to which extent is each parcel for which we develop FMV estimates similar to the parcels in the training data used to fit their corresponding :ref:`Model <Models>`?
 
 
 Selection probability
 *********************
 
-Likelihood of being selected into sales data.
+The empirically estimated probability of a parcel being selected into the sales data.
+
+The probability of observing a sale is the product of the two probabilities: 1) the probability that a parcel sells within the time horizon in question (large rural parcels tend to sell more rarely) and 2) the probability that a sale makes it into our :ref:`Transactions` dataset (some counties don't make their data available, others share only partial information).
+
+We anticipate estimating these probabilities with a logistic regression model.
 
 
-Distance Index
-**************
+Distance Index (DI)
+*******************
 
-Our "Distance Index" (DI) is an indicator of how "different" a given parcel is from the sample of parcel sales that were used to train the model (training data).
+An indicator of how "different" a given parcel is from the sample of parcel sales that were used to train the model (training data).
 
-The purpose of this distance index is to help analysts identify parcels whose :ref:`Predictor set <Predictor sets>` is so **different** ("far away") from the predictor sets of the training data (sales data) that we cannot make the assumption that our approach to estimate parcel-level prediction uncertainties (prediction errors in cross-validation) works for them. In other words, such estimates are distant extrapolations, have therefore weak statistical support, and should be considered speculative.
+The purpose of the distance index is to help analysts identify parcels whose :ref:`Predictor set <Predictor sets>` is so **different** ("far away") from the predictor sets of the training data (sales data) that we cannot make the assumption that our approach to estimate parcel-level prediction uncertainties (prediction errors in cross-validation) works for them. In other words, such estimates are distant extrapolations, have therefore weak statistical support, and should be considered speculative.
 
 The DI is derived from the "Area of Applicability" algorithm proposed by Meyer & Pebesma (2021) [#mp]_. The AOA identifies observations for which prediction errors are expected to fall within the empirically derived prediction uncertainties (obtained through cross-validation).
 

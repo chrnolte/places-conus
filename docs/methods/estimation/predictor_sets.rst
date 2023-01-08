@@ -17,11 +17,13 @@ Public
 
 * Terrain: :any:`elev`, :any:`slope`
 * Water access: :any:`water_exposure`, :any:`cst_50`, :any:`cst_2500`, :any:`p_wet`
+* Flood risk: :any:`fld_fr_fath_f100`, :any:`fld_fr_fath_p100`
 * Land cover: :any:`p_forest`, :any:`p_crops`, :any:`p_pasture`, :any:`p_grassland`, :any:`p_shrub`, :any:`p_barren`
 * Demographics: :aluna:ref:`hh_inc_med_2012-2016`, :any:`bld_pop_exp_c4` (population gravity)
 * Road access: :aluna:ref:`rd_dist_pvd+` :any:`travel`
 * Nearby development: :any:`p_bld_fp_500`, :any:`p_bld_fp_5000`
 * Nearby protection: :any:`p_prot_2010_5000`
+* Population gravity: :any:`bld_pop_exp_c4`
 
 Partially public
 ################
@@ -34,10 +36,7 @@ The following predictors are derived from the parcel boundary data. They are pub
 Non-public
 ##########
 
-* Flood risk: :any:`p_bld_fp_500`, :any:`p_bld_fp_5000` - from Fathom
 * Time: :any:`year_cont` - from sales data
-
-
 
 
 *******************

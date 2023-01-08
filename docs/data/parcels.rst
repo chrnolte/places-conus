@@ -47,11 +47,11 @@ PLACES uses geoprocessing to obtain a large number of attributes for each parcel
 
 The following variables are obtained directly from the parcel boundary input data:
 
-.. attribute:: gid
+.. attribute:: geometry_sha3_224
 
-   This is the unique parcel identifier ("geo ID") of the PLACES FMV (CONUS) dataset. It is derived directly from the geo-located parcel boundary data and anonymized with `SHA-3 <https://en.wikipedia.org/wiki/SHA-3>`_  hashing.
+   This is the unique parcel identifier of the PLACES FMV (CONUS) dataset. It is derived directly from the geo-located parcel boundary data and anonymized with `SHA-3 <https://en.wikipedia.org/wiki/SHA-3>`_  hashing.
 
-   .. todo:: Complete description of algorithm.
+   The algorithm is described in :ref:`Data linkage`.
 
 .. attribute:: apn
 

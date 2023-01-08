@@ -1,11 +1,11 @@
 Predictors
 ==========
 
-This is the list of **parcel-level predictors** for our :any:`Models` of fair market value (FMV).
+This is the list of **parcel-level predictors** for our :ref:`Models` of fair market value (FMV).
 
 They are derived from CONUS-wide spatial datasets and geo-located :ref:`parcel boundaries <Parcels>`.
 
-:ref:`Models` are trained on *combinations* of these predictors called :ref:`Predictor sets`. These can also include predictors from :any:`Transactions` (e.g., :any:`date`) and :any:`Parcels` (e.g., :any:`x`, :any:`y`:, :any:`ha`).
+:ref:`Models` are trained on *combinations* of these predictors called :ref:`Predictor sets`. These can also include predictors from :any:`Transactions` (e.g., :any:`date`) and :any:`Parcels` (e.g., :any:`x`, :any:`y`, :any:`ha`).
 
 *******
 Terrain
@@ -58,6 +58,18 @@ Hydrology
    :Source: same as :any:`lake_frontage`
    :Geoprocessing: Total area of intersection of parcel polygon with 50-meter-buffers around NHD river waterbodies, divided by the buffer width (50m).
 
+.. attribute:: lakefront
+
+   Binary (0/1) indicator for the existence of river frontage.
+
+   :Computation: int(:any:`river_frontage` > 0)
+
+.. attribute:: riverfront
+
+   Binary (0/1) indicator for the existence of river frontage.
+
+   :Computation: int(:any:`river_frontage` > 0)
+
 .. attribute:: water_exposure
 
    :Computation: (:any:`river_frontage` + :any:`lake_frontage`) / :any:`ha`.
@@ -79,19 +91,11 @@ Hydrology
    :Accessed: Mar 26, 2020
    :Geoprocessing: Zonal statistics (mean)
 
-   .. warning::
-
-      Licensed. Not for publication.
-
 .. attribute:: fld_fr_fath_f100
 
    Flood risk: average meters of inundation depth within the 1% annual exceedance probability floodplain (fluvial floods).
 
    :Source: same as :any:`fld_fr_fath_p100`
-
-   .. warning::
-
-      Licensed. Not for publication.
 
 
 **********

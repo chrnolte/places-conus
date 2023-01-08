@@ -14,19 +14,31 @@ A PLACES-FMV (CONUS) models is defined by:
 CONUS models
 ************
 
-CONUS models provide a interpretable understanding of the most important drivers of land value across the full study area. All are fitted on the full :ref:`CONUS` wide sample of vacant land acquisitions (~1.3M sales) using :ref:`OLS <Linear regressions (OLS)>` estimators.
+CONUS models provide a interpretable understanding of the most important drivers of land value across the entire study area. All are fitted on the full :ref:`CONUS` wide sample of vacant land acquisitions (~1.3M sales) using :ref:`OLS <Linear regressions (OLS)>` estimators.
 
-.. note ::
+Table of currently fitted models:
 
-   Notes to self:
-   - Population gravity: might require 3-4 B-splines
+.. csv-table:: Table Title
+   :file: fmv_conus.csv
+   :header-rows: 1
 
-.. todo:: There's something here
+Table columns:
+
+* **ycol**: Predicted variable
+* **xcols**: Variables included "as is".
+* **xcols_div**: Variables interacted with census divisions
+* **x_dummies**: Variables used as categorical dummies (fixed effects)
 
 ***************
 Regional models
 ***************
 
-:Submarket: Regions
-:Estimators: ERT
-:Predictor set: PNAS 2020
+.. note::
+   Under development
+
+*************
+County models
+*************
+
+.. note::
+   Under development

@@ -44,7 +44,7 @@ Transaction attributes
 
 .. attribute:: zf_<filter>
 
-   Arms-length filters for ZTRAX (see `Nolte et al. 2011 <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3900806>`_)
+   Arms-length filters for ZTRAX (see `Nolte et al. 2021 <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3900806>`_)
 
 
 .. attribute:: year_cont
@@ -58,4 +58,4 @@ Transaction attributes
 Linkage to parcels
 ******************
 
-Transactions and parcels have a "many-to-many" (:math:`n-m`) relationship in PLACES, because each transaction can have multiple parcels and each parcel can transact more than once. Linkages between parcels and sales are therefore usually based on a separate table of :any:`sid` - :any:`gid` links.
+Transactions and parcels have a "many-to-many" (:math:`n-m`) relationship in PLACES, because each transaction can have multiple parcels and each parcel can transact more than once. Linkages between parcels and sales are therefore usually based on a separate table of :any:`sid` - :any:`pid` links.

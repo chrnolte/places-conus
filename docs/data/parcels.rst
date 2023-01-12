@@ -53,6 +53,10 @@ The following variables are obtained directly from the parcel boundary input dat
 
    The algorithm is described in :ref:`Data linkage`.
 
+.. attribute:: pid
+
+   Unique parcel identifier internal to PLACES. It currently cannot be shared publicly for parcels whose polygon data we obtain from licensed data sources, as it allows the reverse-engineering of parcel locations and areas.
+
 .. attribute:: apn
 
    This is the tax Assessor's Parcel Number (APN): a string of characters that the tax assessor uses to identify the parcel in their property records and on a map. The syntax of these numbers varies widely across U.S. counties and New England towns.

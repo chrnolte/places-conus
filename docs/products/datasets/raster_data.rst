@@ -13,7 +13,7 @@ In all published raster names, the ``16`` refers to the raster resolution in uni
 CONUS model rasters
 *******************
 
-Filename convention: ``rasters/conus/ln_rprc_ha_pred_<model_name>_16_<version>.tif``
+Folder and filename syntax: ``rasters/conus/ln_rprc_ha_pred_<model_name>_16_<version>.tif``
 
 For an interpretation of ``<model_name>``, see :any:`CONUS models`
 
@@ -28,11 +28,11 @@ Rasters derived from models for submarkets within regions. Each model is fit on 
 FMV predictions
 ###############
 
-Filename convention: ``rasters/regions/fmv_<model_name>_16_<version>.tif``
+Folder and filename syntax: ``rasters/regions/fmv_<model_name>_16_<version>.tif``
 
 *[rename to `ln_rprc_ha_pred` for consistency]*
 
-For an interpretation of ``<model_name>``, see :any:`Regional models`
+For an interpretation of ``<model_name>``, see :any:`Regional models`.
 
 ``<version>`` tracks consecutive updates.
 

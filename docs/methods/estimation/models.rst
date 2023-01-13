@@ -45,13 +45,15 @@ Current syntax: ``<base_model>_<predictor_set>``
 ``<predictor_set>`` refers to the :any:`Predictor set <Predictor sets>` thrown into the estimators:
 
 * ``o``: Original covariates (Nolte 2020 PNAS), but excluding space and time (and parcel size).
-* ``h``: As ``o``, but adding parcel size (h = hectares)
+* ``h``: As ``o``, but adding parcel size (h = hectares).
 * ``st``: Original covariates, including space and time (same as Nolte 2020 PNAS)
 * ``sth``: As ``st``, but adding parcel size.
 * ``o_s``: Predictor set selected through forward feature selection in spatial cross-validation, using predictors from ``o`` as an input.
 * ``h_s``: Predictor set selected through forward feature selection in spatial cross-validation, using predictors from ``h`` as an input.
-* ``o_s+st``: Predictor set from ``o_s``, but adding space and time
+* ``o_s+st``: Predictor set from ``o_s``, but adding space and time.
 * ``o_s+sth``: Predictor set from ``o_s``, but adding space, time and parcel size.
+
+If time is included in the model, predictions are made by setting the `year` value to 2010.
 
 **Example**: ``v_st``: ERT estimators with original predictor set.
 

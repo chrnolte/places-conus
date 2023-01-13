@@ -53,7 +53,8 @@ Current syntax: ``<base_model>_<predictor_set>``
 * ``o_s+st``: Predictor set from ``o_s``, but adding space and time
 * ``o_s+sth``: Predictor set from ``o_s``, but adding space, time and parcel size.
 
-**Example**: ``v_sth``: ERT estimators with original predictor set ``v`` stands for ERT estimator for vacant sales, ``sth`` stands for the original predictor set that includes space, time, and parcel size.
+**Example**: ``v_st``: ERT estimators with original predictor set.
+
 
 *************
 County models

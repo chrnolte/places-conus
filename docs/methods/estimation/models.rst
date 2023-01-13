@@ -18,7 +18,7 @@ CONUS models provide a interpretable understanding of the most important drivers
 
 Table of currently fitted models:
 
-.. csv-table:: Table Title
+.. csv-table:: CONUS models specifications
    :file: fmv_conus.csv
    :header-rows: 1
 
@@ -33,8 +33,27 @@ Table columns:
 Regional models
 ***************
 
-.. note::
-   Under development
+Current syntax: ``<base_model>_<predictor_set>``
+
+
+``<base_model>`` refers to the :any:`Estimator <Estimators>` and is either ERT (``v``) or OLS (``vl``).
+
+.. csv-table:: Regional submarkt model specifications
+   :file: fmv_regions.csv
+   :header-rows: 1
+
+``<predictor_set>`` refers to the :any:`Predictor set <Predictor sets>` thrown into the estimators:
+
+* ``o``: Original covariates (Nolte 2020 PNAS), but excluding space and time (and parcel size).
+* ``h``: As ``o``, but adding parcel size (h = hectares)
+* ``st``: Original covariates, including space and time (same as Nolte 2020 PNAS)
+* ``sth``: As ``st``, but adding parcel size.
+* ``o_s``: Predictor set selected through forward feature selection in spatial cross-validation, using predictors from ``o`` as an input.
+* ``h_s``: Predictor set selected through forward feature selection in spatial cross-validation, using predictors from ``h`` as an input.
+* ``o_s+st``: Predictor set from ``o_s``, but adding space and time
+* ``o_s+sth``: Predictor set from ``o_s``, but adding space, time and parcel size.
+
+**Example**: ``v_sth``: ERT estimators with original predictor set ``v`` stands for ERT estimator for vacant sales, ``sth`` stands for the original predictor set that includes space, time, and parcel size.
 
 *************
 County models

@@ -1,0 +1,3 @@
+﻿mid,label,ycol,xcols,weights,yr_pred,model
+v,"vacant, ERT",ln_rprc_ha,"rd_dist_pvd+, p_bld_fp_500, p_bld_fp_5000, p_prot_2010_5000, p_barren, p_shrub, p_grassland, p_pasture, p_crops, p_forest, slope, travel, elev, p_wet, water_exposure, cst_50, cst_2500, fld_fr_fath_f100, fld_fr_fath_p100, hh_inc_med_bg_2012-2016",ha,2010,"ExtraTreesRegressor(n_estimators=500, bootstrap=True, oob_score=True, min_samples_leaf=3)"
+vl,"vacant, OLS",ln_rprc_ha,"rd_dist_pvd+, p_bld_fp_500, p_bld_fp_5000, p_prot_2010_5000, p_barren, p_shrub, p_grassland, p_pasture, p_crops, p_forest, slope, travel, elev, p_wet, water_exposure, cst_50, cst_2500, fld_fr_fath_f100, fld_fr_fath_p100, hh_inc_med_bg_2012-2016",ha,2010,LinearRegression()

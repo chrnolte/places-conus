@@ -11,14 +11,14 @@ Boston University
 PLACES Lab, Department of Earth and Environment:
 
 * Christoph Nolte (PI), assistant professor, `chrnolte@bu.edu <mailto:chrnolte@bu.edu>`_
-* Casey Rozowski, postdoctoral scholar, `crozows@bu.edu <mailto:crozows@bu.edu>`_
 * Payal Shah, visiting researcher, `pshah2@bu.edu <mailto:pshah2@bu.edu>`_
-* Katherine Anne, undergraduate researcher
-* Natalia Bass, undergraduate researcher
+* Emily French, graduate researcher
+* Gahyun Kim, graduate researcher
+* Cece Lagomarsino, undergraduate researcher
 * Ella Hinkelman, undergraduate researcher
-* Gahyun Kim, undergraduate researcher
-* Jack Rosenberg, undergraduate researcher
 * Julianne Vaughan, undergraduate researcher
+* Katherine Anne, undergraduate researcher
+* Samantha Moroz, undergraduate researcher
 
 
 ******************

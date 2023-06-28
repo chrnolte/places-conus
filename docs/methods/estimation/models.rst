@@ -3,7 +3,7 @@ Models
 
 Models are statistical objects that are fitted to empirical data (logged sales prices :math:`y` and predictors :math:`X`, "training data", here: land sales) to make predictions about the expected values (:math:`\hat{y}`) of new data points (here: any parcel).
 
-A PLACES-FMV (CONUS) models is defined by:
+A PLACES-FMV (CONUS) model is defined by:
 
 * The :ref:`Submarket <Submarkets>` for which it observes sales and makes predictions.
 * The :ref:`Estimator <Estimators>` they deploy.
@@ -14,7 +14,7 @@ A PLACES-FMV (CONUS) models is defined by:
 CONUS models
 ************
 
-CONUS models provide a interpretable understanding of the most important drivers of land value across the entire study area. All are fitted on the full :ref:`CONUS` wide sample of vacant land acquisitions (~1.3M sales) using :ref:`OLS <Linear regressions (OLS)>` estimators.
+CONUS models provide an interpretable understanding of the most important drivers of land value across the entire study area. All are fitted on the full :ref:`CONUS` wide sample of vacant land acquisitions (~1.3M sales) using :ref:`OLS <Linear regressions (OLS)>` estimators.
 
 Table of currently fitted models:
 

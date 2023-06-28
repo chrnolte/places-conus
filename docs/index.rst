@@ -2,20 +2,23 @@ PLACES-FMV (CONUS)
 ==================
 
 .. warning::
-   This is a draft and **beta version**, intended for communications with our research team, collaborator panel, data partners, and early adopters. Please report errors to `chrnolte@bu.edu <mailto:chrnolte@bu.edu>`_.
+   This is a draft and **beta version**. Its purpose is to facilitate communications with our research team, collaborator panel, data partners, and early adopters. Please report errors to `chrnolte@bu.edu <mailto:chrnolte@bu.edu>`_.
 
    Get updates on Github: `<https://github.com/chrnolte/places-conus>`_
 
 .. important::
-   Parcel-level data derived from openly accessible geo-located parcel boundary polygons is shared with :any:`Early adopters` from selected non-profit, governmental, and academic users for non-commercial purposes.
+   An initial data volume from public parcel data sources has been shared with early adopters. The data volume inherits the corresponding data use licenses from the most conservative of its data sources (see :ref:`Data`) and is currently not for redistribution until further notice.
 
-   It comes with absolutely no warranty, inherits the corresponding licenses from the most conservative of its public parcel data sources (see :ref:`Data`), and is **not for redistribution** until further notice. We are working with our partners towards a restricted ICPSR data release, ideally a **CC BY-NC-SA** license.
+   We are working on an agreement that allows us to share the data volume at no cost with government, academic, and non-profit analysts through the Inter-university Consortium for Political and Social Research (`ICPSR <https://www.icpsr.umich.edu/web/pages/>`_).
+
+.. important::
+   * Jul 19 - 20, 2023: data release webinar
+   * Aug 4, 2023: deadline for suggestion of additional models
+   * Sep 30, 2023: all training data is deleted.
 
 This is the **documentation** and **user's guide** for the PLACES-FMV (CONUS) data release.
 
-PLACES-FMV (CONUS) is a dataset of parcel-level estimates of the **fair market value (FMV) of vacant lands** in the contiguous United States (CONUS). The estimates are derived statistically from training data on 1.3 million vacant land sales (2000-2021) using an ensemble of relatively simple, scalable, and locally responsive models, but come with a myriad of caveats.
-
-Government, academic, and non-profit analysts will be able to access the data volume at no cost through the Inter-university Consortium for Political and Social Research (`ICPSR <https://www.icpsr.umich.edu/web/pages/>`_). The planned release date is Jun 30, 2023; early adopters can join by Jan 15, 2023.
+PLACES-FMV (CONUS) is a dataset of parcel-level estimates of the **fair market value (FMV) of vacant lands** in the contiguous United States (CONUS). The estimates are derived statistically from training data of millions of vacant and "mostly" vacant land sales (2000-2021). Our statistical :ref:`Models` are relatively simple, scalable, and are fit at different geographic levels (county, region, state, CONUS).
 
 The research is conducted at Boston University's `PLACES lab <https://placeslab.org>`_ and supported by the National Science Foundation's (NSF) Human-Environment and Geographical Sciences program [#f1]_.
 
@@ -38,4 +41,7 @@ The research is conducted at Boston University's `PLACES lab <https://placeslab.
    Data for the first phase of this research (Aug 1, 2022 - Sep 30, 2023) provided by `Zillow <https://www.zillowgroup.com/>`_ through the Zillow Transaction and Assessment Dataset (ZTRAX). More information can be found at `<http://www.zillow.com/ztrax>`_. The results and opinions are those of the author(s) and do not reflect the position of Zillow Group.
 
 .. note::
-   We thank Regrid's `Data with Purpose <https://regrid.com/purpose>`_ program, which provides access to nonprofit researchers on a "pay what you can" basis. For two thirds of CONUS counties, PLACES-FMV (CONUS) is based on Regrid parcel data. For the remaining counties, publicy parcel boundary data is openly available online).
+   We thank Regrid's `Data with Purpose <https://regrid.com/purpose>`_ program, which provides access to nonprofit researchers on a "pay what you can" basis. For two thirds of CONUS counties, PLACES-FMV (CONUS) is based on Regrid parcel data. For the remaining counties, parcel boundary data was downloaded from publicly available sources.
+
+.. important::
+   While we have produced this data volume in good faith, it does not come with any legal warranties and with no formal guarantees. Human errors in data entry, processing, and interpretation are bound to happen in a project that synthesizes and interpretes governmental and satellite data over such a vast and diverse continent.

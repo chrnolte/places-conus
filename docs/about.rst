@@ -21,6 +21,7 @@ Data downloads: `placeslab.org/fmv-usa <https://placeslab.org/fmv-usa>`_
    :caption: About
 
    about/people
+   about/places
 
 .. note::
    Data for the first phase of this research (Aug 1, 2022 - Sep 30, 2023) provided by `Zillow <https://www.zillowgroup.com/>`_ through the Zillow Transaction and Assessment Dataset (ZTRAX). More information can be found at `<http://www.zillow.com/ztrax>`_. The results and opinions are those of the author(s) and do not reflect the position of Zillow Group.

@@ -5,13 +5,13 @@ The `Private-Land Conservation Evidence System <https://placeslab.org/places/>`_
 
 PLACES links geo-located property boundaries to tax roll data and many social and environmental variables from public sources and Earth observation satellites.
 
-PLACES contains data on ownership, buildings, sales, protection investments, infrastructure, demographics, geophysical characteristics, long-term land cover change, and other variables for more than 130 million parcels in more than 2,700 counties.
+PLACES contains (some) data on ownership, buildings, sales, protection investments, infrastructure, demographics, geophysical characteristics, long-term land cover change, and other variables for more than 130 million parcels in more than 2,700 counties.
 
-It builds upon an extensive open-source ecosystem, leaning heavily on `Python <https://www.python.org/>`_, `geopandas <https://geopandas.org/en/stable/>`_, and `OSGeo <https://www.osgeo.org/>`_. It is deployed on Boston University's section of the `Massachusetts Green High Performance Computing Center <https://www.bu.edu/tech/support/research/rcs/mghpcc/>`_
+It builds upon an extensive open-source ecosystem, leaning heavily on `Python <https://www.python.org/>`_, `geopandas <https://geopandas.org/en/stable/>`_, and `OSGeo <https://www.osgeo.org/>`_.
 
-PLACES data has been used in more than a dozen peer-reviewed high-dimensional empirical analyses in the realm of conservation effectiveness, environmental policy, and environmental economics.
+Boston University's version is deployed on the `Massachusetts Green High Performance Computing Center <https://www.bu.edu/tech/support/research/rcs/mghpcc/>`_.
 
-`List of publications <https://placeslab.org/publications/>`_
+PLACES data has been used in more than a dozen peer-reviewed high-dimensional empirical analyses in the realm of conservation effectiveness, environmental policy, and environmental economics: `list of publications <https://placeslab.org/publications/>`_.
 
 Learn more about the software, data access, and research applications: `PLACES <https://placeslab.org/places/>`_
 

@@ -1,11 +1,10 @@
 Data
 ====
 
-This section describes the input datasets used in the estimation of PLACES FMV (CONUS).
+PLACES-FMV (CONUS) is built on terabytes of input data:
 
 .. toctree::
    :maxdepth: 2
-   :caption: Chapters
 
    data/parcels
    data/transactions

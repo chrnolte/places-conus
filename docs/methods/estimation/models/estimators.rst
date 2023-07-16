@@ -1,5 +1,3 @@
-.. _Models_Home:
-
 Estimators
 ==========
 
@@ -33,19 +31,6 @@ Where:
 * :math:`price_{ijt}` is the sales price of property :math:`i` in region :math:`j` at time :math:`t`
 * :math:`\alpha` is the intercept
 * :math:`X_i` is a :ref:`Predictor set <Predictor sets>`
-
-  * :any:`ha` - always included
-  * :aluna:ref:`hh_inc_med_bg_2012-2016`
-  * :aluna:ref:`rd_dst_pvd+`
-  * :any:`p_wet`
-  * :any:`p_forest`
-  * :any:`p_crops`
-  * :any:`p_pasture`
-  * :any:`fld_fr_fath_f100`
-  * :any:`fld_fr_fath_p100`
-  * :any:`water_exposure`
-  * :any:`cst_2500`
-  * :any:`cst_50`
 * :math:`\mu_j` are dummies for :ref:`Regions`
 * :math:`\tau_t` are year-quarter dummies (always)
 * :math:`\varepsilon_{ijt}` is assumed to be a normally distributed error

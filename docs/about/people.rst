@@ -19,13 +19,14 @@ PLACES Lab, Department of Earth and Environment:
 * Julianne Vaughan, undergraduate researcher
 * Katherine Anne, undergraduate researcher
 * Samantha Moroz, undergraduate researcher
+* Vaughn Drozdowski, undergraduate researcher
 
 
 ******************
 Collaborator panel
 ******************
 
-The collaborator panel advises the Investigators in the development of the research. It is composed of experts in national-scale conservation planning and land value estimation in seven academic, non-profit, governmental, and for-profit organizations:
+The collaborator panel advises the research team in the development of the research. It includes experts in national-scale conservation planning and land value estimation from seven organizations (sorted by last name):
 
 * `Paul Armsworth <https://eeb.utk.edu/people/paul-armsworth/>`_, Professor, Ecology & Evolutionary Biology, University of Tennessee-Knoxville
 * `Wesley Burnett <https://www.ers.usda.gov/authors/ers-staff-directory/j-wesley-burnett/>`_, Agricultural Economist, Economic Research Services, U.S. Department of Agriculture

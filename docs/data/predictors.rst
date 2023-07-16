@@ -1,11 +1,13 @@
 Predictors
 ==========
 
-This is the list of **parcel-level predictors** for our :ref:`Models` of fair market value (FMV).
+This is the list of **parcel-level predictors** and **filter variables** for our :ref:`Models` of fair market value (FMV).
 
-They are derived from CONUS-wide spatial datasets and geo-located :ref:`parcel boundaries <Parcels>`.
+These predictors are derived from geo-located :ref:`parcel boundaries <Parcels>` and publicly available geo-spatial datasets. The spatial resolution of the input data varies: from large ZIP codes to finely digitized river bends down to building footprints and 10m pixels. Geoprocessing steps vary - from simple spatial joins to estimating road access or lake frontage along a property line - and are provided below.
 
-:ref:`Models` are trained on *combinations* of these predictors called :ref:`Predictor sets`. These can also include predictors from :any:`Transactions` (e.g., :any:`date`) and :any:`Parcels` (e.g., :any:`x`, :any:`y`, :any:`ha`).
+:ref:`Models` are trained on different *combinations* of these predictors (:ref:`Predictor sets`). Predictor sets also include data from :any:`Transactions` (notably :any:`date`) and from :any:`Parcels` (geolocation: :any:`x`, :any:`y`; and size: :any:`ha`).
+
+For a full list of variables, see the `PLACES variable dictionary <https://placeslab.org/dictionary/>`_.
 
 *******
 Terrain
@@ -38,7 +40,7 @@ Hydrology
 
 .. attribute:: cst_2500
 
-   Percentage (0-100) of coastal waters within a 2500m radius. Used as proxy for ocean proximity for near-ocean properties. Postively associated with distance to coast as well as with the added value of properties surrounded by coastal waters on several sides, such as islands, peninsulas, etc.
+   Percentage (0-100) of coastal waters within a 2500m radius. Used as proxy for ocean proximity for near-ocean properties. Positively associated with distance to coast as well as with the added value of properties surrounded by coastal waters on several sides, such as islands, peninsulas, etc.
 
    :Source: same as :any:`cst_50`
 
@@ -62,17 +64,17 @@ Hydrology
 
    Binary (0/1) indicator for the existence of river frontage.
 
-   :Computation: int(:any:`river_frontage` > 0)
+   :Computation: :code:`int(`:any:`river_frontage`:code:`> 0)`
 
 .. attribute:: riverfront
 
    Binary (0/1) indicator for the existence of river frontage.
 
-   :Computation: int(:any:`river_frontage` > 0)
+   :Computation: :code:`int(`:any:`river_frontage`:code:`> 0)`
 
 .. attribute:: water_exposure
 
-   :Computation: (:any:`river_frontage` + :any:`lake_frontage`) / :any:`ha`.
+   :Computation: :code:`(`:any:`river_frontage`:code:`+`:any:`lake_frontage` :code:`) /` :any:`ha`
 
 .. attribute:: p_wet
 
@@ -145,14 +147,9 @@ All of the following indicators are derived from Microsoft’s open-source `USBu
 :Access: `<https://github.com/microsoft/USBuildingFootprints>`_
 :Accessed: Dec 6, 2019
 
-.. important::
+Microsoft's building footprints are our preferred open-source metric for the **presence of buildings** in CONUS, as they are more consistently available across CONUS than other indicators (e.g., tax assessor data). However, building footprints introduce new sources of error. For instance, footprints under trees are often missed.
 
-   Microsoft's building footprints are our preferred open-source metric for the **presence of buildings** in CONUS, as they are more consistently available across CONUS than other indicators (e.g., tax assessor data). However, building footprints introduce new sources of error. For instance, footprints under trees are often missed.
-
-   For more information, please refer to the `USBuildingFootprints documentation <https://github.com/microsoft/USBuildingFootprints>`_.
-
-   Alternative measures of building presence are available in tax assessor and parcel boundary datasets. However, their availability and quality varies across states and counties. See `Nolte et al. (2021) <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3900806>`_ (Fig. S14) for a comparison of CONUS-wide building datasets.
-
+Alternative measures of building presence are available in tax assessor and parcel boundary datasets. However, their availability and quality varies across states and counties. For a comparison of ZTRAX-based and remote-sensing based building variables see `Nolte et al. (2023) Land Economics <https://le.uwpress.org/content/early/2023/06/09/le.100.1.102122-0090R>`_ (Appendix Figures A14-16)
 
 .. attribute:: n_bld_fp
 
@@ -172,7 +169,6 @@ All of the following indicators are derived from Microsoft’s open-source `USBu
 
    :Geoprocessing: rasterization of building footprints, pixel-based computation of average building footprint presence within circular neighborhood (2D convolution with moving-window kernel), averaged across all pixels within each parcel (zonal statistics).
 
-
 .. attribute:: p_bld_fp_500
 
    See :aluna:ref:`p_bld_fp_*`
@@ -180,7 +176,6 @@ All of the following indicators are derived from Microsoft’s open-source `USBu
 .. attribute:: p_bld_fp_5000
 
    See :aluna:ref:`p_bld_fp_*`
-
 
 
 ************
@@ -194,7 +189,6 @@ Demographics
    :Source: American Community Survey, via the National Historical Geographic Information System (NHGIS)
    :Access: `<https://www.nhgis.org/>`_
    :Geoprocessing: spatial joins of parcel centroids with reference units.
-
 
 .. attribute:: bld_pop_exp_c4
 
@@ -218,9 +212,7 @@ Infrastructure
    :Access: `<https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html>`_
    :Accessed: Sept 10, 2020
 
-   .. important ::
-
-      Only computed up to 3km.
+   Only computed up to 3km.
 
 .. attribute:: travel
 
@@ -229,9 +221,7 @@ Infrastructure
    :Source: European Commission & World Bank (Nelson 2007)
    :Access: `<https://forobs.jrc.ec.europa.eu/products/gam/>`_
 
-   .. important::
-
-         This dataset was computed with different specifications than :any:`travel_weiss`. The two are not intercomparable. Differences do not necessarily reflect change over time.
+   This dataset was computed with different specifications than :any:`travel_weiss`. The two are not intercomparable. Differences do not necessarily reflect change over time.
 
 
 .. attribute:: travel_weiss
@@ -263,6 +253,72 @@ Land protection
    :Geoprocessing:
      Rasterization of protection polygons, pixel-based computation of average protection within circular neighborhood (2D convolution with moving-window kernel), averaged across all pixels within each parcel (zonal statistics).
 
-   .. warning::
+   .. note::
 
-      Clarify access to COMaP-derived indicators.
+      Data for Colorado is licensed from COMaP and cannot be shared.
+
+
+*************
+Spatial units
+*************
+
+Spatial reference units, ordered from those with few units (U.S. states) to those with many (census block groups).
+
+.. attribute:: division
+
+   U.S. census division (groups of `state`)
+
+.. attribute:: state
+
+   U.S. state, identified by its two-letter Alpha code (e.g. ``CA`` for California)
+
+.. attribute:: region_id
+
+   Region identifier.
+
+   :any:`Core-based regions` are an experimental geographic identifier developed at the :any:`PLACES` lab. Regions divide the contiguous U.S. into less than 1000 spatial units that are identified by their high-value "core" (city centers, resorts).
+
+   We prefer modeling at the level of regions rather than counties or states, as the latter vary substantially in size and number across the U.S. geography.
+
+   Learn more:
+
+   .. toctree::
+      :maxdepth: 2
+
+      regions/regions
+
+   :Geoprocessing: Spatial intersection with parcel centroids
+
+.. attribute:: fips
+
+   U.S. county, identified by its five-digit county FIPS code (e.g. ``06037`` for Los Angeles county, California)
+
+.. attribute:: zip_id
+
+   ZIP code, 2016
+
+   :Source: Census Bureau, via the National Historical Geographic Information System (NHGIS)
+   :Access: `<https://www.nhgis.org/>`_
+   :Geoprocessing: Spatial intersection with parcel centroids
+
+.. attribute:: tract_id
+
+   Census tract identifier, 2016
+
+   Unique within county.
+
+   :Source: Census Bureau, via the National Historical Geographic Information System (NHGIS)
+   :Access: `<https://www.nhgis.org/>`_
+   :Geoprocessing: Spatial intersection with parcel centroids
+
+.. attribute:: bg_id
+
+   Census block group identifier, 2016
+
+   Unique within county.
+
+   :Source: Census Bureau, via the National Historical Geographic Information System (NHGIS)
+   :Access: `<https://www.nhgis.org/>`_
+   :Geoprocessing: Spatial intersection with parcel centroids
+
+

@@ -1,0 +1,6 @@
+﻿parceltype,label,geometries,min_ha,buildings,bld_codes,max_p_e,max_ct_p,min_frac_vacant
+v,vacant,main,0.405,vacant,,0.2,0.2,
+mv,mostly vacant,main,0.405,mostly-vacant,,0.2,0.2,0.5
+mv-all,vacant and low-density,main,0.405,mostly-vacant,,0.2,0.2,
+sfh,single-family home,main,0.01,one-or-two,"RR000, RR101, RR102, RR999",0.2,0.2,
+v-d,vacant (include hexagon dummies),"main, dummyz",0.405,vacant,,0.2,0.2,

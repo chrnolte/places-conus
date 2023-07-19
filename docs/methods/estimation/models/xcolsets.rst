@@ -24,3 +24,13 @@ Reference
 * Nearby protection: :any:`p_prot_2010_5000`
 * Population gravity: :any:`bld_pop_exp_c4`
 
+
+****************************
+Predictor set specifications
+****************************
+
+Specifications for currently used predictor sets (Jul 16, 2023)
+
+.. csv-table::
+  :file: ../cfg/xcolset.csv
+  :stub-columns: 1

@@ -47,3 +47,15 @@ Required selection criteria include:
 
 - Standardized property land use code (:any:`bld_code`) needs to indicate the presence of a single-family home or similar (in ZTRAX: ``RR000``, ``RR101``, ``RR102``, ``RR999``)
 - One or two building footprints have to have been detected on the parcel (:any:`n_bld_fp`)
+
+
+********************
+Parcel type: details
+********************
+
+Specifications for currently used parcel types (Jul 16, 2023)
+
+.. csv-table::
+  :file: ../cfg/parceltype.csv
+  :stub-columns: 1
+

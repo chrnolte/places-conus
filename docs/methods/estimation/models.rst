@@ -11,7 +11,20 @@ A PLACES-FMV (CONUS) model is defined by:
 
 .. toctree::
    :maxdepth: 2
-   :caption: Learn more
+   :caption: Modeling options
 
    models/estimators
    models/xcolsets
+
+
+********************
+Model specifications
+********************
+
+Specifications for currently used models (Jul 16, 2023)
+
+For an interpretation of the content in each column, see :ref:`Geographies`, :ref:`Parcel types`, :ref:`Sale types`, :ref:`Estimators` and :ref:`Predictor sets`.
+
+.. csv-table::
+  :file: cfg/model.csv
+  :stub-columns: 1

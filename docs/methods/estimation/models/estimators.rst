@@ -52,3 +52,31 @@ We use ``scikit-learn``'s ``ExtraTreesRegressor`` (`ERT documentation <https://s
 * ``bootstrap = True`` to compute out-of-bag (OOB) predictions, i.e. fair-market values for parcels that sold, based only on decision trees that have not seen the parcel in question.
 * ``min_samples_leaf = 3`` to average results and to avoid the publication of actual sales data (to comply with the data licensing agreements).
 
+*********************************
+Gradient Boosted Regression (GBR)
+*********************************
+
+Newly included.
+
+***************************************
+Histogram-based Gradient Boosting (HGB)
+***************************************
+
+Newly included.
+
+********
+Stacking
+********
+
+Not yet implemented
+
+
+*******************
+Estimators: details
+*******************
+
+Specifications for currently used estimators (Jul 16, 2023)
+
+.. csv-table::
+  :file: ../cfg/estimator.csv
+  :stub-columns: 1

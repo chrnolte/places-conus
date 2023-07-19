@@ -1,0 +1,4 @@
+﻿saletype,label,datatypes,zf,min_year,max_year,max_mv_ratio
+deed,deed transactions (high-confidence),t,2,2000,2021,25
+deed-zf1,deed transactions (high-to-moderate),t,1,2000,2021,25
+full,deeds and last sales from assessment,"t, a",2,2000,2021,25

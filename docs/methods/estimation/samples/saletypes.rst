@@ -29,3 +29,14 @@ full
 ****
 
 Also includes last sales information from tax assessor records, which does not permit the application of our arms-length sales filters (`Nolte et al. (2023) Land Economics <https://le.uwpress.org/content/early/2023/06/09/le.100.1.102122-0090R>`_)
+
+
+******************
+Sale type: details
+******************
+
+Specifications for currently used sale types (Jul 16, 2023)
+
+.. csv-table::
+  :file: ../cfg/saletype.csv
+  :stub-columns: 1

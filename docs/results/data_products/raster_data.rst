@@ -26,7 +26,9 @@ These are the rasters we use when making maps such as the one published in Nolte
  * Estimates are made for the year ``2010``
 
 :Unit:
- Natural logarithm of U.S. dollars (deflated to Jan 2022) per hectare, multiplied by 16 (``ln($/ha) * 16``).
+ Natural logarithm of U.S. dollars (deflated to Jan 2022) per hectare
+
+ To save space, we converted the `float` values into `uint8` by multiplying the ``ln($/ha)`` unit with 16.
 
  `The multiplication with 16 allows us to save the rasters as integers instead of floats (saves space) without too much loss of information (i.e. integers cover most of the range of the data)`
 
@@ -37,14 +39,23 @@ Rasterized statistical support
 
 Indicators of statistical support: how different from the training sample are the parcels for which the predictions are made?
 
+Our "Area of Applicability" (AOA) indicator is based on `Meyer & Pebesma 2021 <https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13650>`_.
+
+
+
 :Folder: ``rasters/support/``
 :File syntax:
- ``distance_<model>_<prediction_year>.tif``
+ ``AOA_<model>_<prediction_year>_<cross-validation type>.tif``
 :Example:
- ``distance_conus_mv_lm_2010.tif`` is a raster of Meyer & Pebesma's distance index:
+ ``AOA_conus_mv_lm_2010_bg.tif`` is a raster of Meyer & Pebesma's distance index:
 
  * For the model ``conus_mv_lm``
  * For predictions made in the year ``2010``
+ * Based on cross-validation blocked by census block groups ``bg``
 
 :Unit:
- Unitless distance (`Meyer & Pebesma 2021 <https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13650>`_)
+ Unitless distance
+
+ Rasterized AOA maps are created by dividing the distance index by the AOA threshold, and taking the natural logarithm. As a result, pixels with values < 0 are within the AOA, pixels with values > 0 are outside.
+
+ To save space, we converted the `float` values into `uint8` using the following conversion: (x + 4) * 25.

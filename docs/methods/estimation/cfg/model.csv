@@ -1,0 +1,59 @@
+﻿mid,label,fit,update,share,geography,parceltype,saletype,estimator,xcolset,ycol,cv_stats,cv_predict
+conus_lm,CONUS OLS,TRUE,,TRUE,conus,v,deed,lm,lm-conus,lnusd,bg,bg
+conus_mv_lm,"CONUS, mostly vacant, OLS",TRUE,,TRUE,conus,mv,deed,lm,lm-conus-mv,lnusd,bg,bg
+county-nb_ert,"county & neighbors, ERT",TRUE,,TRUE,county-nb,v,deed,ert,ref,lnusd-ha,bg,
+county-nb_ert_xy,"county & neighbors, ERT, location",TRUE,,TRUE,county-nb,v,deed,ert,ref-xy,lnusd-ha,bg,bg
+county-nb_ert_xy_irr,"county & neighbors, ERT, location, irrigation",TRUE,,TRUE,county-nb,v,deed,ert,ref-xy-irr,lnusd-ha,bg,
+county-nb_ert_xy_lake,"county & neighbors, ERT, location, lake/river",TRUE,,TRUE,county-nb,v,deed,ert,ref-xy-lake,lnusd-ha,bg,
+county-nb_ert_xyt,"county & neighbors, ERT, location & time",TRUE,,TRUE,county-nb,v,deed,ert,ref-xyt,lnusd-ha,bg,
+county-nb_lm,"county & neighbors, OLS",TRUE,,TRUE,county-nb,v,deed,lm,lm-local,lnusd,bg,bg
+county-nb_mv_ert_xy,"county & neighbors, mostly vacant, ERT",TRUE,,TRUE,county-nb,mv,deed,ert,ref-mv-xy,lnusd-ha,bg,
+county-nb_pnas_all,"county & neighbors, mostly vacant, ERT (Nolte 2020 predictors)",TRUE,,TRUE,county-nb,mv,deed,ert,pnas-all,lnusd-ha,"r, bg",
+county-nb_pnas_vacant,"county & neighbors, ERT (Nolte 2020 predictors)",TRUE,,TRUE,county-nb,v,deed,ert,pnas-vacant,lnusd-ha,"r, bg",
+county_ert,county ERT,TRUE,,TRUE,county,v,deed,ert,ref,lnusd-ha,bg,
+county_ert_zf1,county ERT (zf=1),TRUE,,TRUE,county,v,deed-zf1,ert,ref,lnusd-ha,bg,
+county_lm,county OLS,TRUE,,TRUE,county,v,deed,lm,lm-local,lnusd,bg,bg
+county_mv_ert,"county, mostly vacant, ERT",TRUE,,TRUE,county,mv,deed,ert,ref-mv,lnusd-ha,bg,
+county_sfh_ert,"county, single-family, ERT",TRUE,TRUE,FALSE,county,sfh,deed,ert,sfh,lnusd,bg,bg
+county_sfh_ert_xy,"county, single-family, ERT, location",TRUE,TRUE,FALSE,county,sfh,deed,ert,sfh-xy,lnusd,bg,
+county_sfh_gbr,"county, single-family, GBR",TRUE,TRUE,FALSE,county,sfh,deed,gbr,sfh,lnusd,bg,
+ensemble,preferred ensemble (not yet implemented),FALSE,,FALSE,conus,v,deed,ensemble,ref,lnusd-ha,bg,
+region-nb_ert,"region & neighbors, ERT",TRUE,,TRUE,region-nb,v,deed,ert,ref,lnusd-ha,"r, bg, tract, zip, s",
+region-nb_ert_xy,"region & neighbors, ERT, location",TRUE,,TRUE,region-nb,v,deed,ert,ref-xy,lnusd-ha,"r, bg, tract, zip, s",
+region-nb_ert_xya,"region & neighbors, ERT, location + area",TRUE,,TRUE,region-nb,v,deed,ert,ref-xya,lnusd,"r, bg, tract, zip, s",
+region-nb_ert_xyh,"region & neighbors, ERT, location + log(ha)",TRUE,,TRUE,region-nb,v,deed,ert,ref-xyh,lnusd,"r, bg, tract, zip, s",
+region-nb_ert_xy_yqc,"region & neighbors, ERT, location, year-quarter constant",TRUE,,TRUE,region-nb,v,deed,ert,ref-xy,lnusd-ha-yqc,"r, bg, tract, zip, s, t",bg
+region-nb_ert_xyt,"region & neighbors, ERT, location + time",TRUE,,TRUE,region-nb,v,deed,ert,ref-xyt,lnusd-ha,bg,
+region-nb_gbr,"region & neighbors, GBR",TRUE,,TRUE,region-nb,v,deed,gbr,ref,lnusd-ha,bg,
+region-nb_gbr-250-8,"region & neighbors, GRB large",TRUE,,TRUE,region-nb,v,deed,gbr-250-8,ref,lnusd-ha,bg,
+region-nb_gbr-250-8_xyt,"region & neighbors, GRB large, location + time",TRUE,,TRUE,region-nb,v,deed,gbr-250-8,ref-xyt,lnusd-ha,bg,
+region-nb_hgb_xy,"region & neighbors, HGB, location",TRUE,,TRUE,region-nb,v,deed,hgb,ref-xy,lnusd-ha,"r, bg, tract, zip, s",
+region-nb_hgb_xya,"region & neighbors, HGB, location + area",TRUE,,TRUE,region-nb,v,deed,hgb,ref-xya,lnusd,"r, bg, tract, zip, s",
+region-nb_hgb_xyh,"region & neighbors, HGB, location + log(ha)",TRUE,,TRUE,region-nb,v,deed,hgb,ref-xyh,lnusd,"r, bg, tract, zip, s",
+region-nb_hgb_xy_yqc,"region & neighbors, HGB, location, year-quarter constant",TRUE,,TRUE,region-nb,v,deed,hgb,ref-xy,lnusd-ha-yqc,"r, bg, tract, zip, s",bg
+region-nb_hgb_xyt,"region & neighbors, HGB, location + time",TRUE,,TRUE,region-nb,v,deed,hgb,ref-xyt,lnusd-ha,bg,
+region-nb_mv_ert,"region & neighbors, mostly vacant, ERT",TRUE,,TRUE,region-nb,mv,deed,ert,ref-mv,lnusd-ha,bg,
+region-nb_mv_gbr_xy,"region & neighbors, mostly vacant, GBR, location",TRUE,,TRUE,region-nb,mv,deed,gbr,ref-mv-xy,lnusd-ha,bg,
+region-nb_mv_hgb,"region & neighbors, mostly vacant, HGB",TRUE,,TRUE,region-nb,mv,deed,hgb,ref-mv,lnusd-ha,bg,
+region-nb_mv_hgb_xy,"region & neighbors, mostly vacant, HGB, location",TRUE,,TRUE,region-nb,mv,deed,hgb,ref-mv-xy,lnusd-ha,bg,
+region-nb_mv_hgb_xy_yqc,"region & neighbors, mostly vacant, HGB, location, YQC",TRUE,,TRUE,region-nb,mv,deed,hgb,ref-mv-xy,lnusd-ha-yqc,"r, bg, tract, zip, s, t",bg
+region-nb_mv_hgb_xy_race_yqc,"region & neighbors, mostly vacant, HGB, location, race, YQC",TRUE,,TRUE,region-nb,mv,deed,hgb,ref-mv-xy-race,lnusd-ha-yqc,"r, bg, tract, zip, s",
+region-nb_mv_hgb_xy_race_fp_yqc,"region & neighbors, mostly vacant, HGB, location, race, footprints, YQC",TRUE,,TRUE,region-nb,mv,deed,hgb,ref-mv-xy-race-fp,lnusd-ha-yqc,"r, bg, tract, zip, s",
+region-nb_mv_hgb_race_yqc,"region & neighbors, mostly vacant, HGB, race, YQC",TRUE,,TRUE,region-nb,mv,deed,hgb,ref-mv-race,lnusd-ha-yqc,bg,
+region-nb_mv-all_ert,"region & neighbors, vacant and low-density, ERT",TRUE,,TRUE,region-nb,mv-all,deed,ert,ref-mv,lnusd-ha,bg,
+region_ert,region ERT,TRUE,,TRUE,region,v,deed,ert,ref,lnusd-ha,bg,
+region_ert_xy,"region ERT, location",TRUE,,TRUE,region,v,deed,ert,ref-xy,lnusd-ha,bg,
+region_ert_xyh,"region ERT, location, size",TRUE,,TRUE,region,v,deed,ert,ref-xyh,lnusd-ha,bg,
+region_hgb_xy,"region ERT, location",TRUE,,TRUE,region,v,deed,ert,ref-xy,lnusd-ha,bg,
+region_hgb_xyh,"region ERT, location, size",TRUE,,TRUE,region,v,deed,ert,ref-xyh,lnusd-ha,bg,
+region_hgb_xyh_yqc,"region ERT, location, size, YQC",TRUE,,TRUE,region,v,deed,ert,ref-xyh,lnusd-ha-yqc,bg,
+region_mv_ert,"region, mostly vacant, ERT",TRUE,,TRUE,region,mv,deed,ert,ref-mv,lnusd-ha,bg,bg
+region_mv-all_ert,"region, vacant and low-density, ERT",TRUE,,TRUE,region,mv-all,deed,ert,ref-mv,lnusd-ha,bg,
+region_mv_gbr,"region, mostly vacant, GBR",TRUE,,TRUE,region,mv,deed,gbr,ref-mv,lnusd-ha,bg,
+region_mv_gbr-250-8,"region, mostly vacant, GBR large",TRUE,,TRUE,region,mv,deed,gbr-250-8,ref-mv,lnusd-ha,bg,
+region_mv_hgb,"region, mostly vacant, HGB",TRUE,,TRUE,region,mv,deed,hgb,ref-mv,lnusd-ha,bg,
+region_sfh_ert,"region, single-family, ERT",FALSE,,FALSE,region,sfh,deed,ert,sfh,lnusd,bg,
+state_ert,state ERT,TRUE,,TRUE,state,v,deed,ert,ref,lnusd-ha,bg,
+state_ert-xy,"state, vacant, ERT, location",TRUE,,TRUE,state,v,deed,ert,ref-xy,lnusd-ha,"r, bg, tract, zip, s",bg
+state_hgb-xy,"state, vacant, HGB, location",TRUE,,TRUE,state,v,deed,hgb,ref-xy,lnusd-ha,bg,
+state_lm,state OLS,TRUE,,TRUE,state,v,deed,lm,lm-local,lnusd,bg,bg

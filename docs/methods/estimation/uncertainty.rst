@@ -7,14 +7,15 @@ Model-level uncertainty
 
 Uncertainty metrics we plan to publish for each :ref:`Model <Models>` include:
 
-* Explained variance (:math:`R^2`)
-* Root mean squared error (RMSE) of predictions derived via cross-validation:
+* Moments of the error distribution (RMSE, mean bias, skew) derived via cross-validation:
 
   * random (``r``)
   * spatially blocked (``s``)
   * temporally blocked (forecasting) (``t``)
   * blocked by block groups (``bg``)
   * experimental: census tracts (``tract``), and ZIP codes (``zip``)
+
+* Explained variance (:math:`R^2`)
 
 ========================
 Parcel-level uncertainty

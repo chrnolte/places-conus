@@ -1,13 +1,17 @@
 Predictors
 ==========
 
-This is the list of **parcel-level predictors** and **filter variables** for our :ref:`Models` of fair market value (FMV).
+This is the list of :ref:`parcel <Parcels>`-level **predictors** and **filter variables** for our :ref:`models <Models>` of fair market value (FMV).
 
-These predictors are derived from geo-located :ref:`parcel boundaries <Parcels>` and publicly available geo-spatial datasets. The spatial resolution of the input data varies: from large ZIP codes to finely digitized river bends down to building footprints and 10m pixels. Geoprocessing steps vary - from simple spatial joins to estimating road access or lake frontage along a property line - and are provided below.
+Most predictors are derived from geospatial :ref:`parcel boundaries <Parcels>` and publicly available geodata. A few are imported directly from:
 
-:ref:`Models` are trained on different *combinations* of these predictors (:ref:`Predictor sets`). Predictor sets also include data from :any:`Transactions` (notably :any:`date`) and from :any:`Parcels` (geolocation: :any:`x`, :any:`y`; and size: :any:`ha`).
+* :any:`Parcels` (geolocation: :any:`x`, :any:`y`, size: :any:`ha`).
+* :any:`Transactions` (:any:`date`)
+
+:ref:`Models` are trained on different *combinations* of these predictors (:ref:`predictor sets <Predictor sets>`). 
 
 For a full list of variables, see the `PLACES variable dictionary <https://placeslab.org/dictionary/>`_.
+
 
 *******
 Terrain
@@ -46,25 +50,25 @@ Hydrology
 
 .. attribute:: lake_frontage
 
-   Estimated total lake frontage of the parcel (in meters).
+   Approximate total lake frontage of the parcel (in meters).
 
-   :Source: National Hydrographic  waterbodies from the National Hydrographic Database (NHD)NHDPlus High Resolution
+   :Source: waterbodies from the National Hydrographic Database (NHDPlus High Resolution)
    :Access: https://www.usgs.gov/national-hydrography/nhdplus-high-resolution
    :Accessed: Jun 18, 2019
-   :Geoprocessing: Total area of intersection of parcel polygon with 50-meter-buffers around NHD lake waterbodies, divided by the buffer width (50m).
+   :Geoprocessing: approximate: area of intersection of parcel polygon with 50-meter-buffers around NHD lake waterbodies, divided by the buffer width (50m).
 
 .. attribute:: river_frontage
 
-   Estimated total river frontage of the parcel (in meters). Only waterbody polygons from the NHD are included (no lines).
+   Approximate total river frontage of the parcel (in meters). Only waterbody polygons from the NHD are included (no lines).
 
    :Source: same as :any:`lake_frontage`
-   :Geoprocessing: Total area of intersection of parcel polygon with 50-meter-buffers around NHD river waterbodies, divided by the buffer width (50m).
+   :Geoprocessing: approximate: area of intersection of parcel polygon with 50-meter-buffers around NHD lake waterbodies, divided by the buffer width (50m).
 
 .. attribute:: lakefront
 
-   Binary (0/1) indicator for the existence of river frontage.
+   Binary (0/1) indicator for the existence of lake frontage.
 
-   :Computation: :code:`int(`:any:`river_frontage`:code:`> 0)`
+   :Computation: :code:`int(`:any:`lake_frontage`:code:`> 0)`
 
 .. attribute:: riverfront
 

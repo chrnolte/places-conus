@@ -19,7 +19,6 @@ PLACES Lab, Department of Earth and Environment:
 * Julianne Vaughan, undergraduate researcher
 * Katherine Anne, undergraduate researcher
 * Samantha Moroz, undergraduate researcher
-* Vaughn Drozdowski, undergraduate researcher
 
 
 ******************

@@ -4,3 +4,9 @@ lm,Linear model,LinearRegression()
 gbr,Gradient boosting,"GradientBoostingRegressor(max_depth=5, min_samples_leaf=3)"
 gbr-250-8,"Gradient boosting (250 estimators, depth 8)","GradientBoostingRegressor(n_estimators=250, max_depth=8, min_samples_leaf=3)"
 hgb,Histogram-based gradient boosting,HistGradientBoostingRegressor(min_samples_leaf=3)
+ert-msl10,Extremely randomized trees (#min: 10),"ExtraTreesRegressor(n_estimators=500, bootstrap=True, min_samples_leaf=10)"
+ert-msl20,Extremely randomized trees (#min: 20),"ExtraTreesRegressor(n_estimators=500, bootstrap=True, min_samples_leaf=20)"
+ert-msl50,Extremely randomized trees (#min: 50),"ExtraTreesRegressor(n_estimators=500, bootstrap=True, min_samples_leaf=50)"
+ert-ne100,Extremely randomized trees (#est: 100),"ExtraTreesRegressor(n_estimators=100, bootstrap=True, min_samples_leaf=3)"
+ert-ne200,Extremely randomized trees (#est: 200),"ExtraTreesRegressor(n_estimators=200, bootstrap=True, min_samples_leaf=3)"
+ert-msl10-ne200,"Extremely randomized trees (#min: 10, #est: 200)","ExtraTreesRegressor(n_estimators=200, bootstrap=True, min_samples_leaf=10)"

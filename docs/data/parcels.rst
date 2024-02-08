@@ -17,22 +17,22 @@ Parcel boundaries
 
 Parcel boundaries (geo-referenced polygons) are the principal unit of geoprocessing and analysis in :ref:`PLACES`.
 
-In the U.S., parcel boundary data is created and maintained by county or town governments to locate **all taxable property** in the county.
+In the U.S., parcel boundary data is created and maintained by county or town governments to locate all taxable property in the county.
 
-There is no federal cadaster in the United States. Commercial data aggregators compile local data nationally and sell data licenses. Some states maintain statewide databases (e.g., for tax equalization or planning purposes), some of which are publicly downloadable (e.g., Massachusetts' `MassGIS <https://www.mass.gov/info-details/massgis-data-property-tax-parcels>`_, Maryland's `MdProperty View <https://planning.maryland.gov/Pages/OurProducts/PropertyMapProducts/MDPropertyViewProducts.aspx>`_, Florida's `GeoPlan <https://www.fgdl.org/metadata/fgdc_html/parcels_2019.fgdc.htm>`_).
+There is no federal cadaster in the United States. Commercial data aggregators compile local data nationally and sell data licenses. Some states make statewide databases (e.g., for tax equalization or planning purposes) available for public download (e.g., Massachusetts' `MassGIS <https://www.mass.gov/info-details/massgis-data-property-tax-parcels>`_, Maryland's `MdProperty View <https://planning.maryland.gov/Pages/OurProducts/PropertyMapProducts/MDPropertyViewProducts.aspx>`_, Florida's `GeoPlan <https://www.fgdl.org/metadata/fgdc_html/parcels_2019.fgdc.htm>`_).
 
-We use **open-source** parcel boundary data wherever we can: in approximately 1/3 of CONUS counties. For most of the remainder, we use parcel data from `Regrid <https://regrid.com>`_'. Through their `Data with Purpose <https://regrid.com/purpose>`_ program, non-profit researchers can access nationwide parcel data on a "pay what you can" basis.
+We use open-source parcel boundary data wherever we can: in about a third of CONUS counties. For most of the remainder, we use parcel data from `Regrid <https://regrid.com>`_'s `Data with Purpose <https://regrid.com/purpose>`_ program, which offers access to nationwide parcel data for non-profit researchers on a "pay what you can" basis.
 
 Tax assessor records
 ####################
 
-Tax assessor records (or **tax roll** data) are datasets collected by a publicly appointed property tax assessor to assess the taxable value of all properties within their jurisdiction (town or county).
+Tax assessor records ("tax roll" data) are datasets collected by a publicly appointed property tax assessor to assess the taxable value of properties within their jurisdiction (town or county).
 
-At the core of these datasets is a table of all real estate properties in a jurisdiction. It usually includes a unique property identifier (the "assessor parcel number", or :`apn`:), the tax assessor's estimate of their taxable value, sometimes separated by buildings vs. land, and attributes that the tax assessor uses to estimate property value, such as the lot size, the size and age of buildings, the counts of bathrooms or bedrooms, and many more.
+They usually contain a table of all (or most) real estate properties in a jurisdiction with a unique property identifier (the "assessor parcel number", or :any:`apn` ), the assessor's estimate of each property's taxable value, and many other attributes that the tax assessor uses to estimate property value, such as lot size, building size and age, bathroom and bedroom counts, etc.
 
 The unit of tax assessor records is the property, not the parcel boundary. A single parcel boundary can include multiple properties (e.g. an apartment complex). A single property can be composed of multiple parcels (e.g., a large ranch)
 
-Until Sep 30, 2023, our main source of tax assessor data was Zillow's `ZTRAX <https://www.zillow.com/research/ztrax/>`_ dataset (see :ref:`Transactions` for more info). We were not allowed to share these data publicly and did not use it as :ref:`Predictors` of our :ref:`Models`. However, we use such data as filters for our training data (e.g., to identify arms-length :ref:`Transactions` or vacant parcels).
+Until Sep 30, 2023, our main source of tax assessor data was Zillow's `ZTRAX <https://www.zillow.com/research/ztrax/>`_ dataset (see :ref:`Transactions` for more info). We use such data as filters for our training data (e.g., to identify arms-length :ref:`Transactions` or vacant parcels). As we were not allowed to share these data publicly, we did not use it as :ref:`Predictors` in our :ref:`Models`.
 
 We link Zillow's ZTRAX data to parcel boundary data using unique parcel identifiers and string pattern matching (`Nolte 2020 PNAS <https://www.pnas.org/doi/10.1073/pnas.2012865117>`_, `Nolte et al. 2024 Land Economics <https://le.uwpress.org/content/100/1/200>`_).
 
@@ -68,7 +68,7 @@ We obtain several essential attributes from parcel boundary data:
 
 .. attribute:: apn
 
-   Assessor's Parcel Number (APN): a string of characters that the tax assessor uses to identify the parcel in their property records and on a map. The syntax of these numbers varies across ounties and towns.
+   Assessor's Parcel Number (APN): a string of characters that the local public tax assessor uses to identify the parcel in their property records and on a map. The syntax of these numbers varies across counties and towns.
 
 .. attribute:: apn2
 
@@ -90,15 +90,32 @@ We obtain several essential attributes from parcel boundary data:
 
    .. note:: Published only for parcels from open-access sources (see :ref:`Parcel data sources`).
 
+.. attribute:: lat_id
+
+   Latitude of parcel centroid in EPSG:4326 projection.
+
+   If the centroid falls outside the parcel boundary, this latitude refers to the parcel's "Pole of Inaccessibility".
+
+   .. note:: Published only for parcels from open-access sources (see :ref:`Parcel data sources`).
+
+.. attribute:: long_id
+
+   Longitude of parcel centroid in EPSG:4326 projection.
+
+   If the centroid falls outside the parcel boundary, this longitude refers to the parcel's "Pole of Inaccessibility".
+
+   .. note:: Published only for parcels from open-access sources (see :ref:`Parcel data sources`).
 
 Tax assessor attributes
 #######################
 
 .. note::
 
-   We obtain all tax assessor data from `ZTRAX <https://www.zillow.com/research/ztrax/>`_ (see :ref:`Transactions`).
+   We obtained all tax assessor data from `ZTRAX <https://www.zillow.com/research/ztrax/>`_ (see :ref:`Transactions`). 
 
-   Tax assessor attributes will not be part of the PLACES-FMV (CONUS) data release. With the closure of the Zillow's ZTRAX program on Sep 30, 2023, future research projects will have to obtain data for these variables from their local county records offices or from real estate data aggregators.
+   We had to delete it on Sep 30, 2023, as per our data license with Zillow.
+
+   Tax assessor attributes will not be part of the PLACES-FMV (CONUS) data release.
 
 .. attribute:: mv_b_za
 

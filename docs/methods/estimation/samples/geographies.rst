@@ -36,7 +36,6 @@ County-level models with neighbors formed the basis of our first published high-
 
 :Example: ``06037-nb`` is Los Angeles county, California, and its five adjacent counties (Ventura, Kern, San Bernardino, Riverside, and Orange)
 
-`Note that we forced the 2020 PNAS model to make predictions for any location, but also required that all training samples had to contain at minimum 1000 sales of large vacant parcels. If a model did not find sufficient sales within a county and its neighbors to meet that requirement, it kept adding sales data from counties located increasingly further away until the requirement was met.`
 
 ******
 States
@@ -51,9 +50,9 @@ State models are based on sales data from one state.
 CONUS
 *****
 
-CONUS models are fit on data for the entire U.S.
+CONUS models are fit on data for the entire contiguous United States.
 
-Because these models include millions of sales, CONUS models face stronger constrains with respect to the estimators we can fit (OLS regressors are quick, gradient boosting regressors not so much).
+Because these models can include millions of sales, CONUS models face stronger constrains with respect to the estimators we can fit. OLS regressors are quick and were fit to the nationwide sample. Tree ensembles were only fit to subsamples.
 
 :Identifier: ``conus``
 
@@ -71,7 +70,7 @@ Regions seem a little more comparable: they are "grown" from high-value cores (c
 Single-region
 #############
 
-Single-region models are based on sales data from one region only.
+Single-region models are based on sales data from one region.
 
 :Identifier: Unique region identifier (:any:`region_id`)
 :Example: ``ca-losa`` is the core-based region around Los Angeles, California. It excludes Lancaster (which is located in LA county), but includes Anaheim, Santa Ana, Irvine (Orange county) as well as Thousand Oaks (Ventura county).

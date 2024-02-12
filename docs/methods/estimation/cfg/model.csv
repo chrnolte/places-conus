@@ -96,7 +96,6 @@ region-nb_yqc,region-nb,v,deed,ert,main,fpihs,latlong45,raceblind,Xha,yqc,equal,
 region-nb_rihs,region-nb,v,deed,ert,main,fpihs,latlong45,raceblind,Xha,Xyr,rihs,0.01,all,X,lnusd-j001,"r, bg, tbg",bg,False,True,False,True,False,region-nb_rihs,True
 region-nb_recip,region-nb,v,deed,ert,main,fpihs,latlong45,raceblind,Xha,Xyr,recip,0.01,all,X,lnusd-j001,"r, bg, tbg",bg,False,True,False,True,False,region-nb_recip,True
 region-nb_invprob,region-nb,v,deed,ert,main,fpihs,latlong45,raceblind,Xha,Xyr,invprob,0.01,all,X,lnusd-j001,"r, bg, tbg",bg,False,True,False,True,False,region-nb_invprob,True
-region-nb_jsd0,region-nb,v,deed,ert,main,fpihs,latlong45,raceblind,Xha,Xyr,equal,0.0,all,X,lnusd-j00,"r, bg, tbg",bg,False,True,False,False,False,region-nb_jsd0,True
 region-nb_jsd01,region-nb,v,deed,ert,main,fpihs,latlong45,raceblind,Xha,Xyr,equal,0.1,all,X,lnusd-j01,"r, bg, tbg",bg,False,True,False,True,False,region-nb_jsd01,True
 region-nb_jsd1,region-nb,v,deed,ert,main,fpihs,latlong45,raceblind,Xha,Xyr,equal,1.0,all,X,lnusd-j10,"r, bg, tbg",bg,False,True,False,True,False,region-nb_jsd1,True
 region-nb_high,region-nb,v,deed,ert,main,fpihs,latlong45,raceblind,Xha,Xyr,equal,0.01,high,X,lnusd-j001,"r, bg, tbg",bg,False,True,False,True,False,region-nb_high,True
@@ -106,7 +105,6 @@ division_lm_Xyqd,division,v,deed,lm,main-lm,fpihs,latlong,raceblind,Xha^2,Xyqd,e
 conus_mv_lm_Xyqd,conus,mv,deed,lm,main-lm,fpihs,latlong,raceblind,Xha^2,Xyqd,equal,0.01,all,X-main-lm_latlong_Xha^2_Xyqd,lnusd-j001,"r, bg, tbg",bg,False,True,False,True,False,conus_mv_lm_Xyqd,False
 division_mv_lm_Xyqd,division,mv,deed,lm,main-lm,fpihs,latlong,raceblind,Xha^2,Xyqd,equal,0.01,all,X-main-lm_latlong_Xha^2_Xyqd,lnusd-j001,"r, bg, tbg",bg,False,True,False,True,False,division_mv_lm_Xyqd,False
 conus_lm_Xyrd,conus,v,deed,lm,main-lm,fpihs,latlong,raceblind,Xha^2,Xyrd,equal,0.01,all,X-main-lm_latlong_Xha^2_Xyrd,lnusd-j001,"r, bg, tbg",bg,False,True,False,True,False,conus_lm_Xyrd,False
-conus_lm_Xyqd_jsd0,conus,v,deed,lm,main-lm,fpihs,latlong,raceblind,Xha^2,Xyqd,equal,0.0,all,X-main-lm_latlong_Xha^2_Xyqd,lnusd-j00,"r, bg, tbg",bg,False,True,False,False,False,conus_lm_Xyqd_jsd0,False
 conus_lm_Xyqd_high,conus,v,deed,lm,main-lm,fpihs,latlong,raceblind,Xha^2,Xyqd,equal,0.01,high,X-main-lm_latlong_Xha^2_Xyqd,lnusd-j001,"r, bg, tbg",bg,False,True,False,True,False,conus_lm_Xyqd_high,False
 conus_mv-barren,conus,mv-barren,deed,ert,main,fpihs,latlong45,raceblind,Xha,Xyr,equal,0.01,all,X,lnusd-j001,"r, bg, tbg",bg,False,True,False,True,False,conus_mv-barren,True
 conus_mv-coast,conus,mv-coast,deed,ert,main,fpihs,latlong45,raceblind,Xha,Xyr,equal,0.01,all,X,lnusd-j001,"r, bg, tbg",bg,False,True,False,True,False,conus_mv-coast,True

@@ -1,4 +1,4 @@
-estimator,label,constructor
+,label,constructor
 ert,Extremely randomized trees,"ExtraTreesRegressor(n_estimators=500, bootstrap=True, min_samples_leaf=3)"
 lm,Linear model,LinearRegression()
 gbr,Gradient boosting,"GradientBoostingRegressor(max_depth=5, min_samples_leaf=3)"

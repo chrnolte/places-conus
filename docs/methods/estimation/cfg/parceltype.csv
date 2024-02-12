@@ -1,4 +1,4 @@
-parceltype,label,buildings,min_frac_vacant,bld_pop_class,query
+,label,buildings,min_frac_vacant,bld_pop_class,query
 v,vacant,vacant,,,
 v-rural,"vacant, rural",vacant,,rural,
 v-exrur,"vacant, exurban/rural",vacant,,"exurban,rural",

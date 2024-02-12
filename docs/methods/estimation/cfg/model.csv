@@ -1,4 +1,4 @@
-mid,geography,parceltype,saletype,estimator,xcolset_base,xcols_buildings,xcols_space,xcols_race,area,time,weights,jsd,disclosure,xcolset,ycol,cv_stats,cv_predict,test_aoa,fit,replace,share,stack,label,is_ensemble
+model_id,geography,parceltype,saletype,estimator,xcolset_base,xcols_buildings,xcols_space,xcols_race,area,time,weights,jsd,disclosure,xcolset,ycol,cv_stats,cv_predict,test_aoa,fit,replace,share,stack,label,is_ensemble
 region-nb,region-nb,v,deed,ert,main,fpihs,latlong45,raceblind,Xha,Xyr,equal,0.01,all,X,lnusd-j001,"r, bg, tract, s, t, tbg",bg,False,True,False,True,False,region-nb,True
 county,county,v,deed,ert,main,fpihs,latlong45,raceblind,Xha,Xyr,equal,0.01,all,X,lnusd-j001,"r, bg, tract, s, t, tbg",bg,True,True,False,True,False,county,True
 region,region,v,deed,ert,main,fpihs,latlong45,raceblind,Xha,Xyr,equal,0.01,all,X,lnusd-j001,"r, bg, tbg",bg,True,True,False,True,False,region,True

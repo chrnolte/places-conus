@@ -1,16 +1,26 @@
 Core-based regions
 ==================
 
-Regions are our data-driven attempt to subdivide the CONUS landscape into spatial blocks that share common characteristics in their drivers of land values but that are not constrained by county boundaries. We speculate that some regional land value models will have higher predictive accuracy and interpretability overall than county-level models.
+.. image:: regions.png
+  :width: 350
+  :alt: Regions
+  :align: right
 
-Our current approach to creating regions is to attribute each part of the U.S. landscape to a high-value core (usually cities or resorts) whose proximity drives the land rent gradient within that region.
+"Regions" are our data-driven attempt to subdivide the CONUS landscape into spatial units that share common characteristics in drivers of land values.
 
-We use these core-based regions as spatial units in the land value models:
+Regions attribute each location in the contiguous United States to its closest high-value core (cities or resorts) that appears to be the dominant driver of land value within that region.
 
-* for region-specific valuation models (where sufficient data is available).
-* for region-specific uncertainty and error metrics.
-* in OLS models: for regional fixed effects or regionally varying coefficients.
-* in data-scarce regions: for the imputation of models behavior, using regions with similar characteristics.
+We use these core-based regions as a spatial unit in many land value :ref:`models <Models>`:
+
+* to train separate models of land value for each "high-value" core.
+
+* to understand region-specific drivers of land value and regional uncertainties.
+
+* to model transitions in land value gradients between neighboring regions.
+
+* to account for idiosycratic regional land price differences in nationwide models (regional fixed effects).
+
+* to impute models for data-scarce regions from regions with similar observable characteristics.
 
 
 **********
@@ -20,91 +30,97 @@ Principles
 Regions are defined by their high-value core
 ############################################
 
-Cores are centers of attraction that drive nearby land prices up. Most cores are city centers (metropolitan or micropolitan areas). However, some recreational locations (e.g., high-end natural amenity resorts, e.g., near mountains and lakes) can create their own local price gradients (e.g., Aspen in Colorado, The Hamptons on Long Island).
-
+Cores are population centers that drive nearby land prices. Most cores are city centers (metropolitan or micropolitan areas). Others are recreational resorts (ski areas, lakes, beaches) that create their own local price gradients (e.g., Aspen in Colorado, The Hamptons on Long Island).
 
 Regions are separated by low land values
 ########################################
 
-Which land area is attributed to a "core" is determined by two-dimensional rent gradients, i.e., observed changes in estimated land values across space. Such shapes are neither circular, nor do they follow administrative boundaries. Instead, they can be idiosyncratic as a function of geography and infrastructure (e.g., around a lake, within a long valley, etc.). The underlying assumption is that a local minimum in the rent gradient indicates that we're at a location where two cores have a similarly strong influence, i.e., a boundary between core-based areas.
+Which land area is attributed to a "core" is determined by geographic rent gradients, i.e., observed changes in estimated land values across space. Such shapes are neither circular, nor do they follow administrative boundaries. They can be idiosyncratic as a function of geography and infrastructure (e.g., around a lake, within a long valley, etc.), but also due to local misestimation of land value. The underlying assumption is that a local minimum in the rent gradient identifies the set of locations where two cores exert a similarly strong influence on land prices, i.e., a boundary between core-based areas.
 
 
-****************
-Creating regions
-****************
+*********************
+How we create regions
+*********************
 
-Start with population centers
-#############################
+Start with core-based statistical areas (CBSA)
+##############################################
 
-We start with the population centers Core-Based Statistical Areas (CBSAs) from the U.S. Census. CBSAs are defined at the county-level (single county or groups of counties), and thus inherit their geography. They include both metropolitan statistical areas (MSA) and micropolitan statistical areas.
+We start with Core-Based Statistical Areas (CBSAs) from the U.S. Census.
 
-Within each CBSA, we find the location with the highest neighborhood population density by:
+CBSAs are defined at the county-level and can include one or several counties. We include metropolitan statistical areas (MSA) and micropolitan statistical areas.
 
-* allocating census-block-level data (American Community Survey, 2012-2016) to Microsoft building footprints (rasterized at 15m resolution) on residential parcels (as identified by ZTRAX)
-* smoothing the resulting population raster with an exponential decay function to remove very localized peaks (commonly localized errors), and then
-* selecting the location of the pixel with the highest value within the CBSA as the core (the starting point of the region growing algorithm).
+Within each CBSA, we identify the location with the highest neighborhood population density based on our ":ref:`population gravity <Population gravity>`" raster (:any:`bld_pop_exp_c4`) derived from population counts and residential building locations.
 
-Manually add selected cores
-###########################
+We smoothe this population raster with a Gaussian decay function to remove very localized peaks (usually errors). We then select the location of the pixel with the highest value within the CBSA as the "core": the starting point of the :any:`region-growing algorithm <Grow regions>`.
 
-We manually added locations of locally high estimated land values through visual inspection of the published PLACES-FMV from *Nolte (2020) PNAS* (`article <https://www.pnas.org/doi/10.1073/pnas.2012865117>`_, `data <https://doi.org/10.5061/dryad.np5hqbzq9>`_).
 
-These belong mostly to two groups:
+Add resorts and secondary cores
+###############################
 
-* Recreation hotspots (e.g. Aspen, Sedona, Hampton, many large lakes). These often have relatively low population densities and therefore either don't belong to a CBSA or aren't the largest population hub within a given CBSA.
+We manually add locations of other cores (other areas with locally high land values) through visual inspection of the published PLACES-FMV from *Nolte (2020) PNAS* (`article <https://www.pnas.org/doi/10.1073/pnas.2012865117>`_, `data <https://doi.org/10.5061/dryad.np5hqbzq9>`_).
 
-* Other cities or towns that share their county with another population center but are far enough away from it to create their own local price gradient (e.g., Santa Barbara and Santa Maria, California).
+These additions belong mostly to:
 
-Recreation hotspots::
+* Recreation hotspots (e.g. Aspen, Sedona, The Hamptons, several large lakes) that affect local land values in spite of having low population densities (few permanent residents)::
 
-    CORES_REC = {'AZ': ['Lake Powell', 'Sedona', 'Lakeside'],
-                 'CA': ['Mendocino'],
-                 'CO': ['Aspen', 'Estes Park', 'Granby', 'Telluride',
-                        'Pagosa Springs'],
-                 'GA': ['Lake Oconee', 'Lake Chatuga'],
-                 'MA': ['Nantucket'],
-                 'ME': ['Desert Island'],
-                 'MD': ['Deep Creek Lake'],
-                 'NC': ['Lake Norman', 'Highlands'],
-                 'NH': ['Littleton', 'North Conway'],
-                 'NY': ['The Hamptons', 'Eagle Bay', 'Saranac Lake'],
-                 'OK': ['Hochatown'],
-                 'VA': ['Smith Mountain Lake', 'Cape Charles'],
-                 'WI': ['Woodruff'],
-                }
+    CORES_REC = {
+        'AZ': ['Lake Powell', 'Sedona', 'Lakeside'],
+        'CA': ['Mendocino'],
+        'CO': ['Aspen', 'Estes Park', 'Granby', 'Telluride', 'Pagosa Springs'],
+        'GA': ['Lake Oconee', 'Lake Chatuga'],
+        'MA': ['Nantucket'],
+        'ME': ['Desert Island'],
+        'MD': ['Deep Creek Lake'],
+        'NC': ['Lake Norman', 'Highlands'],
+        'NH': ['Littleton', 'North Conway'],
+        'NY': ['The Hamptons', 'Eagle Bay', 'Saranac Lake'],
+        'OK': ['Hochatown'],
+        'VA': ['Smith Mountain Lake', 'Cape Charles'],
+        'WI': ['Woodruff'],
+    }
 
-Other cities or towns::
+* Cities or towns that share a county with another large population center, but are far enough away to create their own local price gradient (e.g., Santa Barbara and Santa Maria in California)::
 
-    CORES_CITY = {'AR': ['Conway'],
-                  'AZ': ['Bullhead City', 'Kingman'],
-                  'CA': ['Bishop', 'Lancaster', 'Monterey', 'Palm Springs',
-                         'Paso Robles', 'Ridgecrest', 'Santa Barbara',
-                         'Victorville', 'Walnut Creek'],
-                  'CT': ['Danbury', 'Bristol'],
-                  'LA': ['Covington', 'Slidell'],
-                  'MA': ['New Bedford', 'Fitchburg', 'Amherst'],
-                  'ME': ['Augusta', 'Presque Isle'],
-                  'MD': ['Frederick', 'Annapolis', 'Ocean City'],
-                  'MI': ['Port Huron'],
-                  'NC': ['Waynesville'],
-                  'NH': ['Nashua', 'Portsmouth'],
-                  'NJ': ['Long Branch'],
-                  'NY': ['Middletown'],
-                  'PA': ['Hazleton'],
-                  'SC': ['Anderson'],
-                  'VA': ['Bristol', 'Fredericksburg', 'Hampton'],
-                  'VT': ['Middlebury'],
-                 }
+    CORES_CITY = {
+        'AR': ['Conway'],
+        'AZ': ['Bullhead City', 'Kingman'],
+        'CA': [
+            'Bishop',
+            'Lancaster',
+            'Monterey',
+            'Palm Springs',
+            'Paso Robles',
+            'Ridgecrest',
+            'Santa Barbara',
+            'Victorville',
+            'Walnut Creek',
+        ],
+        'CT': ['Danbury', 'Bristol'],
+        'LA': ['Covington', 'Slidell'],
+        'MA': ['New Bedford', 'Fitchburg', 'Amherst'],
+        'ME': ['Augusta', 'Presque Isle'],
+        'MD': ['Frederick', 'Annapolis', 'Ocean City'],
+        'MI': ['Port Huron'],
+        'NC': ['Waynesville'],
+        'NH': ['Nashua', 'Portsmouth'],
+        'NJ': ['Long Branch'],
+        'NY': ['Middletown'],
+        'PA': ['Hazleton'],
+        'SC': ['Anderson'],
+        'VA': ['Fredericksburg', 'Hampton'],
+        'VT': ['Middlebury'],
+    }
+
 
 Grow regions
 ############
 
 We use a region-growing algorithm - the ``watershed`` image segmentation algorithm from the ``scikit-image`` Python package - to assign each 480m pixel in CONUS to the core believed to drive the land price gradient in its neighborhood.
 
-The data basis for the land value gradient is the published raster dataset from *Nolte (2020) PNAS* (`article <https://www.pnas.org/doi/10.1073/pnas.2012865117>`_, `data <https://doi.org/10.5061/dryad.np5hqbzq9>`_), model "PLACES FMV: all".
+As a wall-to-wall estimate of the land value gradient, we use the 2010 CONUS land value raster published in *Nolte (2020) PNAS* (`article <https://www.pnas.org/doi/10.1073/pnas.2012865117>`_, `data <https://doi.org/10.5061/dryad.np5hqbzq9>`_, main model with buildings).
 
-The figure visualizes resulting regions (boundaries and color shades) with their corresponding cores (dots), overlaid over a map of the land value raster used in the rent gradient (blue > yellow > red: cheap > expensive). Large cities create larger regions (e.g., Atlanta). Where land gradients are flat (e.g., in the Great Plains), regions look like `Thiessen polygons in a Voronoi diagram <https://en.wikipedia.org/wiki/Voronoi_diagram>`_.
-
-.. image:: regions.png
+.. image:: regions_methods.png
   :width: 800
   :alt: Regions
+
+The figure visualizes resulting regions (boundaries and color shades) with their corresponding cores (dots), overlaid over a map of the land value raster used in the rent gradient (blue > yellow > red: cheap > expensive). Large cities create larger regions (e.g., Atlanta). Where land gradients are flat (e.g., in the Great Plains), regions look like `Thiessen polygons in a Voronoi diagram <https://en.wikipedia.org/wiki/Voronoi_diagram>`_.

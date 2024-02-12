@@ -1,32 +1,31 @@
-﻿parceltype,label,geometries,min_ha,buildings,bld_codes,max_p_e,max_ct_p,min_frac_vacant,bld_pop_class,query
-v,vacant,main,0.405,vacant,,0.2,0.2,,,
-v-rural,"vacant, rural",main,0.405,vacant,,0.2,0.2,,rural,
-v-exrur,"vacant, exurban/rural",main,0.405,vacant,,0.2,0.2,,"exurban,rural",
-v-exurban,"vacant, exurban",main,0.405,vacant,,0.2,0.2,,exurban,
-v-urbex,"vacant, urban/exurban",main,0.405,vacant,,0.2,0.2,,"urban,exurban",
-v-urban,"vacant, urban",main,0.405,vacant,,0.2,0.2,,urban,
-v-d,vacant (include hexagon dummies),"main, dummyz",0.405,vacant,,0.2,0.2,,,
-mv,mostly vacant,main,0.405,mostly-vacant,,0.2,0.2,0.5,,
-mv-all,"mostly vacant, no balancing",main,0.405,mostly-vacant,,0.2,0.2,,,
-mv-rural,"mostly vacant, rural",main,0.405,mostly-vacant,,0.2,0.2,0.5,rural,
-mv-exrur,"mostly vacant, exurban/rural",main,0.405,mostly-vacant,,0.2,0.2,0.5,"exurban,rural",
-mv-exurban,"mostly vacant, exurban",main,0.405,mostly-vacant,,0.2,0.2,0.5,exurban,
-mv-urbex,"mostly vacant, urban/exurban",main,0.405,mostly-vacant,,0.2,0.2,0.5,"urban,exurban",
-mv-urban,"mostly vacant, urban",main,0.405,mostly-vacant,,0.2,0.2,0.5,urban,
-sfh,single-family home,main,0.01,one-or-two,"RR000, RR101, RR102, RR999",0.2,0.2,,,
-v-floodplain,"vacant, floodplain",main,0.405,vacant,,0.2,0.2,,,fld_fr_fath_f100 > 0
-mv-floodplain,"mostly vacant, floodplain",main,0.405,mostly-vacant,,0.2,0.2,0.5,,fld_fr_fath_f100 > 0
-v-coast,"vacant, coast",main,0.405,vacant,,0.2,0.2,,,cst_2500 > 0
-mv-coast,"mostly vacant, coast",main,0.405,mostly-vacant,,0.2,0.2,0.5,,cst_2500 > 0
-v-crops,"vacant, cropland",main,0.405,vacant,,0.2,0.2,,,p_crops > 20
-mv-crops,"mostly vacant, cropland",main,0.405,mostly-vacant,,0.2,0.2,0.5,,p_crops > 20
-v-forest,"vacant, forest",main,0.405,vacant,,0.2,0.2,,,p_forest > 20
-mv-forest,"mostly vacant, forest",main,0.405,mostly-vacant,,0.2,0.2,0.5,,p_forest > 20
-v-wet,"vacant, wetland",main,0.405,vacant,,0.2,0.2,,,p_wet > 20
-mv-wet,"mostly vacant, wetland",main,0.405,mostly-vacant,,0.2,0.2,0.5,,p_wet > 20
-v-pasture,"vacant, pasture",main,0.405,vacant,,0.2,0.2,,,p_pasture > 20
-mv-pasture,"mostly vacant, pasture",main,0.405,mostly-vacant,,0.2,0.2,0.5,,p_pasture > 20
-v-barren,"vacant, barren",main,0.405,vacant,,0.2,0.2,,,p_barren > 20
-mv-barren,"mostly vacant, barren",main,0.405,mostly-vacant,,0.2,0.2,0.5,,p_barren > 20
-v-grassland,"vacant, grassland",main,0.405,vacant,,0.2,0.2,,,p_grassland > 20
-mv-grassland,"mostly vacant, grassland",main,0.405,mostly-vacant,,0.2,0.2,0.5,,p_grassland > 20
+parceltype,label,buildings,min_frac_vacant,bld_pop_class,query
+v,vacant,vacant,,,
+v-rural,"vacant, rural",vacant,,rural,
+v-exrur,"vacant, exurban/rural",vacant,,"exurban,rural",
+v-exurban,"vacant, exurban",vacant,,exurban,
+v-urbex,"vacant, urban/exurban",vacant,,"urban,exurban",
+v-urban,"vacant, urban",vacant,,urban,
+v-d,vacant (include hexagon dummies),vacant,,,
+mv,mostly vacant,mostly-vacant,0.5,,
+mv-all,"mostly vacant, no balancing",mostly-vacant,,,
+mv-rural,"mostly vacant, rural",mostly-vacant,0.5,rural,
+mv-exrur,"mostly vacant, exurban/rural",mostly-vacant,0.5,"exurban,rural",
+mv-exurban,"mostly vacant, exurban",mostly-vacant,0.5,exurban,
+mv-urbex,"mostly vacant, urban/exurban",mostly-vacant,0.5,"urban,exurban",
+mv-urban,"mostly vacant, urban",mostly-vacant,0.5,urban,
+v-floodplain,"vacant, floodplain",vacant,,,fld_fr_fath_f100 > 0
+mv-floodplain,"mostly vacant, floodplain",mostly-vacant,0.5,,fld_fr_fath_f100 > 0
+v-coast,"vacant, coast",vacant,,,cst_2500 > 0
+mv-coast,"mostly vacant, coast",mostly-vacant,0.5,,cst_2500 > 0
+v-crops,"vacant, cropland",vacant,,,p_crops > 20
+mv-crops,"mostly vacant, cropland",mostly-vacant,0.5,,p_crops > 20
+v-forest,"vacant, forest",vacant,,,p_forest > 20
+mv-forest,"mostly vacant, forest",mostly-vacant,0.5,,p_forest > 20
+v-wet,"vacant, wetland",vacant,,,p_wet > 20
+mv-wet,"mostly vacant, wetland",mostly-vacant,0.5,,p_wet > 20
+v-pasture,"vacant, pasture",vacant,,,p_pasture > 20
+mv-pasture,"mostly vacant, pasture",mostly-vacant,0.5,,p_pasture > 20
+v-barren,"vacant, barren",vacant,,,p_barren > 20
+mv-barren,"mostly vacant, barren",mostly-vacant,0.5,,p_barren > 20
+v-grassland,"vacant, grassland",vacant,,,p_grassland > 20
+mv-grassland,"mostly vacant, grassland",mostly-vacant,0.5,,p_grassland > 20

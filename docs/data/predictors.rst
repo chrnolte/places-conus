@@ -24,7 +24,6 @@ Terrain
    :Source: USGS National Elevation Dataset (NED) 1/3 Arc-Second
    :Geoprocessing: Mean of pixel values within parcel (zonal statistics). Elevation raster exported at 0.00449 degrees resolution from Google Earth Engine (EPSG:4326).
 
-
 .. attribute:: slope
 
    Average slope of parcel (degrees).
@@ -253,7 +252,7 @@ Alternative measures of building presence are available in tax assessor and parc
 Demographics
 ************
 
-.. aluna:aluna:: hh_inc_med_bg_2012-2016
+.. attribute:: hh_inc_med_bg_2012_2016
 
    Median household income at the census block-group level (2012-2016)
 
@@ -261,49 +260,49 @@ Demographics
    :Access: `<https://www.nhgis.org/>`_
    :Geoprocessing: spatial joins of parcel centroids with reference units.
 
-.. attribute:: p_asian_bg_2012-2016
+.. attribute:: p_asian_bg_2012_2016
    
    % population in block group identifying as "Asian" on American Community Survey.
 
-   :Source: see :aluna:ref:`hh_inc_med_bg_2012-2016`
+   :Source: see :aluna:ref:`hh_inc_med_bg_2012_2016`
 
-.. attribute:: p_black_bg_2021-2016
+.. attribute:: p_black_bg_2021_2016
    
    % population in block group identifying as "Black or African-American" on American Community Survey.
 
-   :Source: see :aluna:ref:`hh_inc_med_bg_2012-2016`
+   :Source: see :aluna:ref:`hh_inc_med_bg_2012_2016`
 
-.. attribute:: p_hispanic_bg_2021-2016
+.. attribute:: p_hispanic_bg_2021_2016
    
    % population in block group identifying as "Hispanic" on American Community Survey.
    
    (Note: overlaps with 'race' categories, such as white, black, asian, etc.)
 
-   :Source: see :aluna:ref:`hh_inc_med_bg_2012-2016`
+   :Source: see :aluna:ref:`hh_inc_med_bg_2012_2016`
 
-.. attribute:: p_mixed_bg_2021-2016
+.. attribute:: p_mixed_bg_2021_2016
    
    % population in block group identifying as "Mixed" on American Community Survey.
 
-   :Source: see :aluna:ref:`hh_inc_med_bg_2012-2016`
+   :Source: see :aluna:ref:`hh_inc_med_bg_2012_2016`
 
-.. attribute:: p_native_bg_2021-2016
+.. attribute:: p_native_bg_2021_2016
    
    % population in block group identifying as "American Indian or Alaska Native" on American Community Survey.
 
-   :Source: see :aluna:ref:`hh_inc_med_bg_2012-2016`
+   :Source: see :aluna:ref:`hh_inc_med_bg_2012_2016`
 
-.. attribute:: p_pacific_bg_2021-2016
+.. attribute:: p_pacific_bg_2021_2016
    
    % population in block group identifying as "Native Hawaiian or Other Pacific Islander" on American Community Survey.
 
-   :Source: see :aluna:ref:`hh_inc_med_bg_2012-2016`
+   :Source: see :aluna:ref:`hh_inc_med_bg_2012_2016`
 
-.. attribute:: p_white_bg_2021-2016
+.. attribute:: p_white_bg_2021_2016
    
    % population in block group identifying as "White" on American Community Survey.
 
-   :Source: see :aluna:ref:`hh_inc_med_bg_2012-2016`
+   :Source: see :aluna:ref:`hh_inc_med_bg_2012_2016`
 
 .. attribute:: bld_pop_exp_c4
 
@@ -311,9 +310,20 @@ Demographics
 
    A spatial measure of residential population, attributed to building footprints.
 
-   :Geoprocessing: block-group population counts are allocated to building footprint areas (Microsoft) on residential parcels. Subsequently, a 2D spatial decay function (exponential) is applied to the rasterized population counts to create a 2D "gravity" field (higher values indicate closeness to more people).
+   :Geoprocessing: Zonal statistics
 
+   Find out more:
 
+   .. toctree::
+      :maxdepth: 1
+
+      population_gravity/population_gravity
+
+.. attribute:: shouldI
+
+   Do this?
+
+   
 **************
 Infrastructure
 **************
@@ -354,6 +364,7 @@ Land protection
 
    See :aluna:ref:`p_prot_*_*`
 
+
 .. aluna:aluna:: p_prot_*_*
 
    Percentage of area within a given <radius> (in meters) that is protected by fee or conservation easement in a given <year>.
@@ -370,6 +381,7 @@ Land protection
    .. note::
 
       Data for Colorado is licensed from COMaP and cannot be shared.
+
 
 .. attribute:: p_e
 
@@ -413,14 +425,14 @@ Spatial reference units, ordered from those with few units (U.S. states) to thos
 
    We prefer modeling at the level of regions rather than counties or states, as the latter vary substantially in size and number across the U.S. geography.
 
-   Learn more:
+   :Geoprocessing: Spatial intersection with parcel centroids
+
+   Find out more:
 
    .. toctree::
-      :maxdepth: 2
+      :maxdepth: 1
 
       regions/regions
-
-   :Geoprocessing: Spatial intersection with parcel centroids
 
 .. attribute:: fips
 

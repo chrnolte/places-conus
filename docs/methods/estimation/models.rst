@@ -1,17 +1,17 @@
 Models
 ======
 
-Models are statistical objects. We train ("fit") them on :ref:`Samples` of sales prices (:math:`y`) and :any:`Predictors` (:math:`X`). Then, we let them make predictions about expected sales prices (:math:`\hat{y}`) of any other :any:`Parcel <Parcels>`.
+Land value models are trained on :ref:`samples <Samples>` of sales prices and :any:`predictors <Predictors>` to make predictions about expected sales prices all :any:`parcels <Parcels>`.
 
-A PLACES-FMV (CONUS) model is defined by:
+A model is defined by:
 
-* The :any:`Sample <Samples>` for which it is fit
-* The :any:`Estimator <Estimators>` the models deploy (linear regression, tree ensembles).
-* The :any:`Predictor set <Predictor sets>` they see during fitting (default, with space, with time, with size)
+* The :any:`sample <Samples>` it sees, defined by :ref:`geography <Geographies>`, :ref:`parcel type <Parcel types>`, and :ref:`sale type <Sale types>`. 
+* The :any:`estimator <Estimators>` it uses (linear regression, tree ensembles).
+* The :any:`predictor set <Predictor sets>` it sees during fitting (independent variables).
 
 .. toctree::
    :maxdepth: 2
-   :caption: Modeling options
+   :caption: Modeling: details
 
    models/estimators
    models/xcolsets
@@ -21,9 +21,7 @@ A PLACES-FMV (CONUS) model is defined by:
 Model specifications
 ********************
 
-Specifications for currently used models (Jul 16, 2023)
-
-For an interpretation of the content in each column, see :ref:`Geographies`, :ref:`Parcel types`, :ref:`Sale types`, :ref:`Estimators` and :ref:`Predictor sets`.
+To interpret columns, see :ref:`geographies <Geographies>`, :ref:`parcel types <Parcel types>`, :ref:`sale types <Sale types>`, :ref:`estimators <Estimators>` and :ref:`predictor sets <Predictor sets>`.
 
 .. csv-table::
   :file: cfg/model.csv

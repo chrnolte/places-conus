@@ -1,7 +1,7 @@
 Data
 ====
 
-PLACES-FMV (CONUS) is built on terabytes of input data:
+PLACES-FMV (CONUS) :ref:`data products <Data products>` are derived from terabytes of input data:
 
 .. toctree::
    :maxdepth: 2

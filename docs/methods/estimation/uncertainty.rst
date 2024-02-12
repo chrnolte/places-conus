@@ -1,31 +1,48 @@
 Uncertainty
 ===========
 
-=======================
+***********************
 Model-level uncertainty
-=======================
+***********************
 
-Uncertainty metrics we plan to publish for each :ref:`Model <Models>` include:
+We compute the following uncertainty metrics for each :ref:`model <Models>`:
 
-* Moments of the error distribution (RMSE, mean bias, skew) derived via cross-validation:
+* Count of observations (``n``)
+* Mean prediction residual (``mean`` bias)
+* Standard deviation of prediction error (``std``)
+* Root mean squared error (``rmse``)
+* Explained variance (``r2``: :math:`R^2`)
+* Skew (``skew``)
+* Kurtosis (``kurtosis``)
 
-  * random (``r``)
+
+Cross-validation
+****************
+
+Model-level uncertainty metrics are derived via cross-validation.
+
+We use mainly three blocking strategies reflecting different prediction tasks:
+
+  * random folds (``r``)
+  * blocking by census block groups (``bg``)
+  * blocking by census block groups, next-year forecasting (``tbg``)
+
+Variations include:
+
+  * next-year forecasting (``t``)
   * spatially blocked (``s``)
-  * temporally blocked (forecasting) (``t``)
-  * blocked by block groups (``bg``)
-  * experimental: census tracts (``tract``), and ZIP codes (``zip``)
+  * blocked by census tracts (``tract``)
 
-* Explained variance (:math:`R^2`)
 
-========================
+************************
 Parcel-level uncertainty
-========================
+************************
 
-Uncertainty metrics we plan to publish for each :ref:`Parcel <Parcels>` include:
+We compute the following uncertainty metrics for each :ref:`Parcel <Parcels>`:
 
 
 Statistical support
-###################
+*******************
 
 Parcel-level metrics that offer users a measure of statistical support, i.e., an answer to the question: to which extent is each parcel for which we develop FMV estimates similar to the parcels in the training data used to fit their corresponding :ref:`Model <Models>`?
 

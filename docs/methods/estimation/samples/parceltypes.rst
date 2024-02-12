@@ -1,75 +1,81 @@
 Parcel types
 ============
 
-A `parceltype` identifies types of parcels for which sales data is observed.
+A **parceltype** identifies types of parcels included in sales data :ref:`samples <Samples>`.
 
 
-**************
+***********
+Vacant land
+***********
+
+We train our :ref:`models <Models>` on sales of vacant and "mostly" vacant properties.
+
+PLACES-FMV (CONUS) was designed to support conservation planning studies. Most long-term land conservation transactions seek to protect land without buildings.
+
+Excluding sales with buildings also avoids the challenge of accounting for heterogeneity in building value. This heterogeneity can be large, and is shaped by attributes that we cannot observe consistently for the entire contiguous United States.
+
+
 Vacant parcels
 **************
 
-Vacant parcels are parcels for which our available indicators suggest that it contains no building.
+Vacant parcels (``v``) are parcels which appear to have no buildings at the time of sale.
 
-Required selection criteria include:
+Vacant parcels need to pass the following filters:
 
 - No detected building footprint :any:`p_bld_fp`
 - No recorded positive building assessed value (:any:`val_b_za`) in linked tax assessor data.
 - No recorded building market value (:any:`mv_b_za`) in linked tax assessor data.
 - No standardized property land use code (:any:`bld_code`) that indicates the presence of a building (e.g. "single-family home")
 
-:Identifier: ``v``
 
-
-***********************
 "Mostly" vacant parcels
 ***********************
 
-"Mostly vacant" parcels are parcels that might have some buildings, but mostly consist of vacant land (in terms of area or property value).
+"Mostly" vacant parcels (``mv``) are parcels that are either fully vacant or that only have buildings of small size and/or value.
 
-Required selection criteria include:
+"Mostly" vacant parcels need to pass the following filters:
 
 - Detected building footprint (:any:`p_bld_fp`) covers <0.1% of the parcel area.
 - Recorded building assessed value (:any:`val_b_za`) is ≤0.1% of the total assessed value (:any:`val_t_za`)
 - Recorded building market value (:any:`mv_b_za`) is ≤0.1% of the total assessed value (:any:`mv_t_za`)
 
-:Identifier: ``mv``
+In addition, samples of "mostly" vacant parcels need to contain ≥50% fully vacant parcels (`min_frac_vacant`).
+
+*********************
+Urban-rural gradients
+*********************
+
+Proximity to urban centers and resorts is a major driver of land value in the United States.
+
+Conservation goals also often differ between urban and remote locations. For organizations focused on urban parks or remote wildlife conservation, it is useful to know the drivers of land prices and associated uncertainties for their respective parts of the landscape.
+
+We use our ":ref:`population gravity <Population gravity>`" raster (:any:`bld_pop_exp_c4`) to distinguish ``urban``, ``exurban``, and ``rural`` settings. Our cutoffs are: 0.09 to separate urban from exurban areas, and 0.008 to separate exurban from rural areas.
+
+.. image:: urban_rural.png
+  :width: 800
+  :alt: Urban-rural typology
+  :align: right
+
+We fit separate models for each setting, as well as their combinations: ``urbex`` (urban + exurban) and ``exrur`` (exurban + rural). 
 
 
-*******************
-Single-family homes
-*******************
+****************
+Standard filters
+****************
 
-Single-family homes are one of the most-studied property type in valuation studies in the United States and included here for comparison.
-
-Required selection criteria include:
-
-- Standardized property land use code (:any:`bld_code`) needs to indicate the presence of a single-family home or similar (in ZTRAX: ``RR000``, ``RR101``, ``RR102``, ``RR999``)
-- One or two building footprints have to have been detected on the parcel (:any:`n_bld_fp`)
-
-:Identifier: ``sfh``
-
-
-*******************
-Additional criteria
-*******************
-
-* Some model samples are restricted to subsections of the rural-urban gradient ("rural", "exurban", "urban"). The cutoffs between these regions are based on our experimental "population gravity" raster (:any:`bld_pop_exp_c4`): 0.09 to separate urban from exurban areas and 0.008 to separate exurban from rural areas. These are arbitrary values.
-
-* Some model samples apply custom filters, e.g. for floodplains, wetlands, forests, coastlines. See below.
+* All samples exclude properties smaller than one acre.
 
 * All samples exclude properties with known conservation easements (:any:`p_e` > 20%, to avoid including encumbered purchases).
 
-* All samples exclude properties that were part of a publicly financed land acquisition included in the :ref:`Validation` data (:any:`ct_p` > 20%, to avoid including validation data in the training sample).
+* All samples exclude properties that were part of a publicly financed land acquisition included in the :ref:`validation <Validation>` data (:any:`ct_p` > 20%, to avoid including validation data in the training sample).
 
-* "Vacant" and "mostly vacant" models drop sales smaller than one acre.
+* Some model samples apply custom filters to :ref:`predictor data <Predictors>`, e.g. to fit models specific to floodplains, wetlands, coastlines, forests, croplands, and pasture (see table below for details).
 
-********************
-Parcel type: details
-********************
 
-Specifications for currently used parcel types (Jul 16, 2023)
+**************************
+Parcel type specifications
+**************************
 
 .. csv-table::
   :file: ../cfg/parceltype.csv
   :stub-columns: 1
-

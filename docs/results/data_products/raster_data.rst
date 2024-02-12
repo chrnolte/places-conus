@@ -3,16 +3,14 @@ Raster data
 
 :Folder: ``rasters/``
 :Format: GeoTIFF
-:CRS: Conus Albers (`EPSG:5070 <https://epsg.io/5070-1252>`_
-:Resolution: 480 x 480 meters, snapped to National Land Cover Database
+:Projection: Conus Albers (`EPSG:5070 <https://epsg.io/5070-1252>`_)
+:Resolution: 480 x 480 meters (snapped to the `National Land Cover Database <https://www.mrlc.gov/data>`_)
 
 *******************************
 Rasterized land value estimates
 *******************************
 
 Parcel-level land value estimates for the contiguous United States.
-
-These are the rasters we use when making maps such as the one published in Nolte 2020 PNAS
 
 :Folder: ``rasters/estimates/``
 :File syntax:

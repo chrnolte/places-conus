@@ -6,20 +6,23 @@ Raster data
 Fair market value (FMV) rasters
 *******************************
 
-
-
-Parcel-level estimates of "fair market value" (FMV) for the contiguous United States, rasterized.
-
-:Folder: ``rasters/estimates/``
-
-:File syntax:
- ``fmv_<model_id>_<prediction_year>.tif``, where ``model_id`` identifies the :ref:`model <Model specifications>`.
+Rasterized :ref:`parcel-level estimates of fair market value (FMV) <Fair market value (FMV) estimates>` for the contiguous U.S.
 
 :Example:
- ``fmv_region-nb_2010.tif`` is a land value raster with estimates from the model ``region-nb`` for the year ``2010``.
+ ``fmv_region-nb_2010.tif`` is a land value raster with estimates from the :ref:`model <Model specifications>` ``region-nb`` (region & neighbors) for the year ``2010``.
+
+.. image:: raster_fmv.png
+  :width: 800
+  :alt: Fair market value rasters
+
+:Location:
+ ``rasters/estimates/fmv_<model_id>_<year>.tif``, where:
+
+ * ``model_id`` identifies the :ref:`model <Model specifications>`, and
+ * ``year`` is the year for which the prediction was made.
 
 :Unit:
- Natural logarithm of U.S. dollars per hectare (deflated to Jan 2022), divided by 16 and rounded to save space (``uint8``).
+ Natural logarithm of U.S. dollars (real, deflated to Jan 2022), per area (hectare), divided by 16, converted to ``uint8`` (0-255).
 
  .. math::
  
@@ -32,50 +35,59 @@ Parcel-level estimates of "fair market value" (FMV) for the contiguous United St
 :Projection: Conus Albers (`EPSG:5070 <https://epsg.io/5070-1252>`_)
 :Resolution: 480 x 480 meters (snapped to the `National Land Cover Database <https://www.mrlc.gov/data>`_)
 
-.. image:: raster_fmv.png
-  :width: 800
-  :alt: Fair market value rasters
+
 
 
 ***********************************
 Area of applicability (AOA) rasters
 ***********************************
 
+Parcel-level indicator of the :ref:`Area of Applicability (AOA)` for the FMV estimates, standardized and rasterized.
 
-Parcel-level indicators of statistical support for the FMV estimates, rasterized.
+This is a measure of **dissimilarity**: how "different" is each predicted parcel sale from the sales in the :ref:`sample <Samples>` that the predicting :ref:`model <Models>` was trained on?
 
-We use the :ref:`Area of Applicability (AOA)` proposed by `Meyer & Pebesma 2021 <https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13650>`_.
+It can be used to identify "audacious" (incomparable) predictions in the :ref:`land value rasters <Fair market value (FMV) rasters>`, such as for parcels that rarely sell (such as unique or very large parcels) in parts of the landscape where sales data is unobserved (undisclosed or not digitized).
 
-In a nutshell, the AOA is a metric of how dissimilar the predicted parcel is from the parcels on which the :ref:`model <Models>` was trained, in comparison to how dissimilar the parcels were to each other in the cross-validation of the model (from which the uncertainties are derived).
-
-Dissimilarity is computed as the distance in the predictor space, where predictors are scaled (weighted) according to their importance in the model.
-
-:Folder: ``rasters/support/``
-
-:File syntax:
- ``aoa_<model_id>_<prediction_year>_<cross-validation type>.tif``, where ``model_id`` identifies the :ref:`model <Model specifications>` and ``cross-validation type`` identifies the type of :ref:`cross-validation <Cross-validation>`.
+Computationally, it is the Euclidean distance in weighted predictor space, where predictors are weighted by their importance in the model (see `Meyer & Pebesma 2021 <https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13650>`_).
 
 :Example:
- ``aoa_region-nb_2010_bg.tif`` is a raster of Meyer & Pebesma's distance index:
+ ``aoa_region-nb_2010_bg.tif`` is a raster of the area of applicability.
 
- * For the model ``region-nb``
+ * For the :ref:`model <Model specifications>` ``region-nb``
  * For predictions made in the year ``2010``
- * Cross-validation blocked by census block groups ``bg``
+ * For which the AOA threshold was determined via :ref:`cross-validation <Cross-validation>` blocked by census block groups (``bg``).
+
+.. image:: raster_aoa.png
+  :width: 800
+  :alt: Area of applicability rasters
+
+:Location:
+ ``rasters/support/aoa_<model_id>_<year>_<cross-validation_type>.tif``:
+
+ * ``model_id`` identifies the :ref:`model <Model specifications>`.
+ * ``year`` is the year for which the prediction was made.
+ * ``cross-validation_type`` identifies the type of :ref:`cross-validation <Cross-validation>` used to find the AOA threshold.
+
 
 :Unit:
- Unitless distance, converted.
+ Unitless distance, rescaled and converted to ``uint8`` (0-255).
 
- We picked a conversion that would result in values ≤100 being within the AOA, and values ≥100 being outside the AOA, while preserving as much of the heterogeneity in AOA as possible within a space-saving `uint8` raster.
+ Values ≤100 are within the threshold of the :ref:`AOA <Area of Applicability (AOA)>`, values ≥100 are outside.
+
+ Our conversion preserves much of the data heterogeneity within a ``uint8`` variable scope (which saves space).
 
   .. math::
    
-    (ln(AOA) - 4) * 25
+    ln(\frac{dissimilarity\;index}{AOA\;threshold}) - 4) * 25
+
+ where:
+
+ * ``dissimilarity index`` is the dissimilarity index proposed by `Meyer & Pebesma 2021 <https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13650>`_.
+ * ``AOA threshold`` is the proposed threshold on the dissimilarity index to identify the "Area of Applicability".
+
 
 :Format: GeoTIFF
 :Projection: Conus Albers (`EPSG:5070 <https://epsg.io/5070-1252>`_)
 :Resolution: 480 x 480 meters (snapped to the `National Land Cover Database <https://www.mrlc.gov/data>`_)
 
 
-.. image:: raster_aoa.png
-  :width: 800
-  :alt: Area of applicability rasters

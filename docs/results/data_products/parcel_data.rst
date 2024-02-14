@@ -15,7 +15,7 @@ Parcel-level estimates of property value from :ref:`models <Models>`.
 :Example:
  ``25011_parcel_predictions.pqt`` is a table of parcel-level predictor data for Franklin county, Massachusetts.
 
-:Location:
+:File location:
  ``parcels/<state>/<county>/<county>_parcel_predictions_pqt.zip``
 
  * ``state`` is the 2-letter Alpha code of the state (see :any:`state`).
@@ -45,7 +45,7 @@ Parcel-level table of all :ref:`predictors <Predictors>` used by :ref:`models <M
 :Example:
  ``25011_parcel_predictors.pqt`` is a table of parcel-level predictor data for Franklin county, Massachusetts
 
-:Location:
+:File location:
  ``parcels/<state>/<county>/<county>_parcel_predictions_pqt.zip``
 
  * ``state`` is the 2-letter Alpha code of the state (see :any:`state`).
@@ -64,19 +64,21 @@ Parcel-level table of all :ref:`predictors <Predictors>` used by :ref:`models <M
 Area of applicability (AOA) data
 ********************************
 
-Parcel-level indicator of the :ref:`Area of Applicability (AOA)` for the FMV estimates, standardized.
+Parcel-level indicators of the :ref:`Area of Applicability (AOA)` for the FMV estimates, standardized.
 
-This a measure of **dissimilarity**: how "different" is each predicted parcel sale from the sales in the :ref:`sample <Samples>` that the predicting :ref:`model <Models>` was trained on?
+The AOA is a measure of **dissimilarity**: how "different" is each predicted parcel sale from the sales in the :ref:`sample <Samples>` that the predicting :ref:`model <Models>` was trained on?
 
-It can be used to identify "audacious" (incomparable) predictions in the :ref:`land value rasters <Fair market value (FMV) rasters>`, such as for parcels that rarely sell (such as unique or very large parcels) in parts of the landscape where sales data is unobserved (undisclosed or not digitized).
+It can help identify parts of the landscape for which predictions are extrapolated far beyond the characteristics of the original sample. If such extrapolation occurs, prediction errors and biases can (and often will) be larger than we were able to estimate from the training sample.
+
+Such extrapolation can happen for a number of reasons: some parcels have a particularly unique set of characteristics, others are of a certain type that rarely sells (such as large government-owned lands), others might be located in parts of the landscape with few sales data observations (e.g. non-disclosure states).
 
 Computationally, it is the Euclidean distance in weighted predictor space, where predictors are weighted by their importance in the model (see `Meyer & Pebesma 2021 <https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13650>`_).
 
 :Example:
- ``25011_parcel_predictors.pqt`` is a table of parcel-level AOA measures data for Franklin county, Massachusetts
+ ``25011_parcel_aoa.pqt`` is a table of parcel-level AOA measures for Franklin county, Massachusetts
 
-:Location:
- ``parcels/<state>/<county>/<county>_parcel_support_pqt.zip``
+:File location:
+ ``parcels/<state>/<county>/<county>_parcel_aoa_pqt.zip``
 
  * ``state`` is the 2-letter Alpha code of the state (see :any:`state`).
  * ``county`` is the 5-letter FIPS code of the county (see :any:`fips`).

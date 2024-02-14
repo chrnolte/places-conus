@@ -3,7 +3,7 @@ Model data
 
 Measures of :ref:`model-level uncertainty <Model-level uncertainty>`:
 
-:Location:
+:File location:
  ``models/model_performance_pqt.zip``
 
 :Rows:

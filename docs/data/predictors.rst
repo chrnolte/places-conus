@@ -1,16 +1,11 @@
 Predictors
 ==========
 
-This is the list of :ref:`parcel <Parcels>`-level **predictors** and **filter variables** for our :ref:`models <Models>` of fair market value (FMV).
+This is the full list of :ref:`parcel <Parcels>`-level variables used as :ref:`predictors <Predictors>` or :ref:`sampling <Samples>` filters for our :ref:`models <Models>` of fair market value (FMV).
 
-Most predictors are derived from geospatial :ref:`parcel boundaries <Parcels>` and publicly available geodata. A few are imported directly from:
+These variables are derived from geospatial :ref:`parcel boundaries <Parcels>` and publicly available geodata.
 
-* :any:`Parcels` (geolocation: :any:`x`, :any:`y`, size: :any:`ha`).
-* :any:`Transactions` (:any:`date`)
-
-:ref:`Models` are trained on different *combinations* of these predictors (:ref:`predictor sets <Predictor sets>`). 
-
-For a full list of variables, see the `PLACES variable dictionary <https://placeslab.org/dictionary/>`_.
+In addition to the variables listed below, we derive a few predictors directly from :any:`parcels boundaries <Parcels>` (geolocation: :any:`lat_id`, :any:`long_id` and size: :any:`ha`) or :any:`transactions <Transactions>` (:any:`date` of sale).
 
 
 *******

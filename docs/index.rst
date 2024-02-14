@@ -8,7 +8,7 @@ This is the **documentation** and **user's guide** for the PLACES-FMV (CONUS) da
 
 PLACES-FMV (CONUS) is a **data volume** containing parcel-level estimates of the "fair market value" (FMV) of vacant and mostly-vacant lands in the contiguous United States (CONUS).
 
-The estimates are derived from training :ref:`Data` of more than a million vacant and "mostly" vacant property sales in CONUS across two decades (2000-2021). Our statistical :ref:`Models` use public data as :ref:`Predictors` and are fitted at various spatial scales (county, metro areas, state, CONUS).
+The estimates are derived statistically from :ref:`data <Data>` of more than a million vacant and "mostly" vacant property sales in CONUS across two decades (2000-2021). Our :ref:`models <Models>` use public data as :ref:`predictors <Predictors>` and are fitted at different :ref:`geographies <Geographies>` (counties, cities, states, CONUS).
 
 The research is conducted at Boston University's `PLACES lab <https://placeslab.org>`_ and supported by the National Science Foundation's (NSF) Human-Environment and Geographical Sciences program [#f1]_.
 
@@ -20,7 +20,6 @@ The research is conducted at Boston University's `PLACES lab <https://placeslab.
    data
    methods
    results
-   genindex
 
 .. rubric:: Footnotes
 

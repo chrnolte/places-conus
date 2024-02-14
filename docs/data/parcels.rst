@@ -123,7 +123,7 @@ Tax assessor attributes
 
 .. attribute:: mv_t_za
 
-   Market value of property (both land and buildings) in ZTRAX assessor data. Used to identify :any:`Mostly vacant` parcel types and to filter out sales with extremely large discrepancies between sales prices and estimated market value.
+   Market value of property (both land and buildings) in ZTRAX assessor data. Used to identify :any:`"mostly" vacant parcels <"Mostly" vacant parcels>` and to filter out sales with extremely large discrepancies between sales prices and estimated market value.
 
 .. attribute:: val_b_za
 
@@ -131,7 +131,7 @@ Tax assessor attributes
 
 .. attribute:: val_t_za
 
-   Taxable value of property (both land and buildings) in ZTRAX assessor data. Used to identify :any:`Mostly vacant` parcel types.
+   Taxable value of property (both land and buildings) in ZTRAX assessor data. Used to identify :any:`"mostly" vacant parcels <"Mostly" vacant parcels>`.
 
 .. attribute:: bld_code
 

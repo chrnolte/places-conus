@@ -15,14 +15,14 @@ Rasterized :ref:`parcel-level estimates of fair market value (FMV) <Fair market 
   :width: 800
   :alt: Fair market value rasters
 
-:Location:
+:File location:
  ``rasters/estimates/fmv_<model_id>_<year>.tif``, where:
 
  * ``model_id`` identifies the :ref:`model <Model specifications>`, and
  * ``year`` is the year for which the prediction was made.
 
 :Unit:
- Natural logarithm of U.S. dollars (real, deflated to Jan 2022), per area (hectare), divided by 16, converted to ``uint8`` (0-255).
+ Natural logarithm of U.S. dollars (real, deflated to Jan 2022), per area (hectare), divided by 16 and converted to ``uint8`` (0-255) to save space.
 
  .. math::
  
@@ -46,7 +46,9 @@ Parcel-level indicator of the :ref:`Area of Applicability (AOA)` for the FMV est
 
 This is a measure of **dissimilarity**: how "different" is each predicted parcel sale from the sales in the :ref:`sample <Samples>` that the predicting :ref:`model <Models>` was trained on?
 
-It can be used to identify "audacious" (incomparable) predictions in the :ref:`land value rasters <Fair market value (FMV) rasters>`, such as for parcels that rarely sell (such as unique or very large parcels) in parts of the landscape where sales data is unobserved (undisclosed or not digitized).
+It can help identify parts of the landscape for which predictions are extrapolated far beyond the characteristics of the original sample. If such extrapolation occurs, prediction errors and biases can (and often will) be larger than we were able to estimate from the training sample.
+
+Such extrapolation can happen for a number of reasons: some parcels have a particularly unique set of characteristics, others are of a certain type that rarely sells (such as large government-owned lands), others might be located in parts of the landscape with few sales data observations (e.g. non-disclosure states).
 
 Computationally, it is the Euclidean distance in weighted predictor space, where predictors are weighted by their importance in the model (see `Meyer & Pebesma 2021 <https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13650>`_).
 
@@ -61,7 +63,7 @@ Computationally, it is the Euclidean distance in weighted predictor space, where
   :width: 800
   :alt: Area of applicability rasters
 
-:Location:
+:File location:
  ``rasters/support/aoa_<model_id>_<year>_<cross-validation_type>.tif``:
 
  * ``model_id`` identifies the :ref:`model <Model specifications>`.

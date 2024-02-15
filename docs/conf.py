@@ -11,7 +11,7 @@ import sphinx_rtd_theme
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'PLACES FMV (CONUS) 0.1 (draft)'
-copyright = '2022, Christoph Nolte'
+copyright = '2024 Christoph Nolte'
 author = 'Christoph Nolte'
 release = '0.1'
 

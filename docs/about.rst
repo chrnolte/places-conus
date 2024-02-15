@@ -3,7 +3,7 @@ About
 
 PLACES-FMV (CONUS) is a set of parcel-level estimates of the **fair market value (FMV) of vacant lands** in the contiguous United States (CONUS). The estimates are derived statistically from data of millions of vacant land sales between 2000-2021, using an ensemble of regression estimators (multilinear, tree ensembles) at multiple spatial scales.
 
-Government, academic, and non-profit analysts will be able to access the data volume at no cost through the Inter-university Consortium for Political and Social Research (`ICPSR <https://www.icpsr.umich.edu/web/pages/>`_). A group of :ref:`Early adopters` from academic, governmental, and non-profit organizations is currently scrutinizing early versions of the dataset prior to public release.
+Government, academic, and non-profit analysts will be able to access the data volume at no cost through the Inter-university Consortium for Political and Social Research (`ICPSR <https://www.icpsr.umich.edu/web/pages/>`_). A group of :ref:`early adopters <Early adopters>` from academic, governmental, and non-profit organizations is currently scrutinizing early versions of the dataset prior to public release.
 
 The 2020s have seen new investments into multi-level, multi-regional conservation planning efforts in the United States. In the midst of the Covid pandemic, the `Great American Outdoors Act <https://www.doi.gov/gaoa>`_ generated the largest-ever federal budget for public investments into long-term land protection. Shortly after, the incoming Biden administration launched the "`America The Beautiful <https://www.doi.gov/priorities/america-the-beautiful>`_" initiative, a call to action to work together to conserve, connect, and restore 30 percent of U.S. lands and water by 2030 ("30 by 30").
 

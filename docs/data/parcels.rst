@@ -50,7 +50,7 @@ We obtain several essential attributes from parcel boundary data:
 
 .. attribute:: geometry_sha3_224
 
-   This is the unique parcel identifier of the PLACES FMV (CONUS) dataset. It is the hashed value of :any:`geometry`,  anonymized using secure `SHA-3 <https://en.wikipedia.org/wiki/SHA-3>`_  hashing. Anyone with access to parcel boundary data can compute it using a short Python code snippet (see :ref:`Data linkage`).
+   This is the unique parcel identifier of the PLACES FMV (CONUS) dataset. It is the hashed value of :any:`geometry`,  anonymized using secure `SHA-3 <https://en.wikipedia.org/wiki/SHA-3>`_  hashing. Anyone with access to parcel boundary data can compute it using a short Python code snippet (see :ref:`Joining parcel data <Joining parcel data>`).
 
 .. attribute:: geometry
 

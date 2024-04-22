@@ -314,10 +314,6 @@ Demographics
 
       population_gravity/population_gravity
 
-.. attribute:: shouldI
-
-   Do this?
-
    
 **************
 Infrastructure

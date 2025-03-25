@@ -10,9 +10,9 @@ Vacant land
 
 We train our :ref:`models <Models>` on sales of vacant and "mostly" vacant properties.
 
-PLACES-FMV (CONUS) was designed to support conservation planning studies. Most long-term land conservation transactions seek to protect land without buildings.
+This is by design: PLACES-FMV (CONUS) was designed to support conservation planning, and most land conservation transactions seek to protect land without buildings.
 
-Excluding sales with buildings also avoids the challenge of accounting for heterogeneity in building value. This heterogeneity can be large, and is shaped by attributes that we cannot observe consistently for the entire contiguous United States.
+Excluding sales with buildings also avoids the challenge of accounting for heterogeneity in building value. Such heterogeneity can be substantial, and it is often shaped by attributes that we cannot observe consistently for the entire contiguous United States.
 
 
 Vacant parcels
@@ -47,7 +47,7 @@ Urban-rural gradients
 
 Proximity to urban centers and resorts is a major driver of land value in the United States.
 
-Conservation goals also often differ between urban and remote locations. For organizations focused on urban parks or remote wildlife conservation, it is useful to know the drivers of land prices and associated uncertainties for their respective parts of the landscape.
+Conservation goals often differ between urban and remote locations. For organizations focused on urban parks or remote wildlife conservation, it is useful to know the drivers of land prices and associated uncertainties in their landscapes of interest.
 
 We use our ":ref:`population gravity <Population gravity>`" raster (:any:`bld_pop_exp_c4`) to distinguish ``urban``, ``exurban``, and ``rural`` settings. Our cutoffs are: 0.09 to separate urban from exurban areas, and 0.008 to separate exurban from rural areas.
 
@@ -59,9 +59,9 @@ We use our ":ref:`population gravity <Population gravity>`" raster (:any:`bld_po
 We fit separate models for each setting, as well as their combinations: ``urbex`` (urban + exurban) and ``exrur`` (exurban + rural). 
 
 
-****************
-Standard filters
-****************
+***************************
+General parcel type filters
+***************************
 
 * All samples exclude properties smaller than one acre.
 

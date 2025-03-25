@@ -3,7 +3,7 @@ Access
 
 Government, academics, and non-profit users will be able to access the data volume at no cost through the Inter-university Consortium for Political and Social Research (`ICPSR <https://www.icpsr.umich.edu/web/pages/>`_).
 
-The release is planned for Spring 2024.
+The release is planned for summer 2025.
 
 **************
 Early adopters

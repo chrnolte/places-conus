@@ -30,11 +30,11 @@ Tax assessor records ("tax roll" data) are datasets collected by a publicly appo
 
 They usually contain a table of all (or most) real estate properties in a jurisdiction with a unique property identifier (the "assessor parcel number", or :any:`apn` ), the assessor's estimate of each property's taxable value, and many other attributes that the tax assessor uses to estimate property value, such as lot size, building size and age, bathroom and bedroom counts, etc.
 
-The unit of tax assessor records is the property, not the parcel boundary. A single parcel boundary can include multiple properties (e.g. an apartment complex). A single property can be composed of multiple parcels (e.g., a large ranch)
+The unit of tax assessor records is the property, not the :ref:`parcel boundary <Parcel boundaries>`. A single parcel boundary can include multiple properties (e.g. an apartment complex). A single property can be composed of multiple parcels (e.g., a large ranch)
 
-Until Sep 30, 2023, our main source of tax assessor data was Zillow's `ZTRAX <https://www.zillow.com/research/ztrax/>`_ dataset (see :ref:`Transactions` for more info). We use such data as filters for our training data (e.g., to identify arms-length :ref:`Transactions` or vacant parcels). As we were not allowed to share these data publicly, we did not use it as :ref:`Predictors` in our :ref:`Models`.
+Until Sep 30, 2023, our main source of tax assessor data was Zillow's `ZTRAX <https://www.zillow.com/research/ztrax/>`_ dataset (see :ref:`Transactions`). We linked ZTRAX' tax assessor records to parcel boundary data using unique parcel identifiers and string pattern matching (`Nolte 2020 PNAS <https://www.pnas.org/doi/10.1073/pnas.2012865117>`_, `Nolte et al. 2024 Land Economics <https://le.uwpress.org/content/100/1/200>`_).
 
-We link Zillow's ZTRAX data to parcel boundary data using unique parcel identifiers and string pattern matching (`Nolte 2020 PNAS <https://www.pnas.org/doi/10.1073/pnas.2012865117>`_, `Nolte et al. 2024 Land Economics <https://le.uwpress.org/content/100/1/200>`_).
+We used tax assessor data as filters for our training data (e.g., to identify arms-length transactions or vacant parcels). However, as we were not allowed to share ZTRAX tax assessor data with the public, we did not use it as :ref:`predictors <Predictors>` in our :ref:`models <Models>`.
 
 
 *****************
@@ -111,11 +111,7 @@ Tax assessor attributes
 
 .. note::
 
-   We obtained all tax assessor data from `ZTRAX <https://www.zillow.com/research/ztrax/>`_ (see :ref:`Transactions`). 
-
-   We had to delete it on Sep 30, 2023, as per our data license with Zillow.
-
-   Tax assessor attributes will not be part of the PLACES-FMV (CONUS) data release.
+   We obtained all tax assessor data from `ZTRAX <https://www.zillow.com/research/ztrax/>`_ (see :ref:`Transactions`). We had to delete it on Sep 30, 2023. Tax assessor attributes are not part of the PLACES-FMV (CONUS) data release.
 
 .. attribute:: mv_b_za
 

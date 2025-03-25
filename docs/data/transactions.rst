@@ -1,21 +1,21 @@
 Transactions
 ============
 
-Our estimates of fair market value (FMV) are derived from **observed prices of land sales** and associated characteristics of sold land.
+Our estimates of fair market value (FMV) are derived from **observed prices of land sales** and the characteristics of the parcels that were sold (:ref:`predictors <Predictors>`).
 
 
 ************************
 Transaction data sources
 ************************
 
-All our transaction data was provided by the real estate marketplace company `Zillow, Inc <https://www.zillowgroup.com/>`_.
+All our transaction data was provided by `Zillow, Inc <https://www.zillowgroup.com/>`_, a real estate marketplace company.
 
 .. note::
    Data for the first phase of this grant (Aug 1, 2022 - Sep 30, 2023) was provided by `Zillow <https://www.zillowgroup.com/>`_ through the Zillow Transaction and Assessment Dataset (ZTRAX). More information can be found at `<http://www.zillow.com/ztrax>`_. The results and opinions are those of the author(s) and do not reflect the position of Zillow Group.
 
-The ZTRAX program ended on Sep 30, 2023. We had to delete ZTRAX from our systems at that date, including derivatives from which one could reverse-engineer the original data.
+Zillow ended the ZTRAX program on Sep 30, 2023. We had to delete ZTRAX from our systems at that date, including derivatives from which one could reverse-engineer the original data.
 
-We are grateful that Zillow allowed us to work with this data. Its absence will be felt. Researchers with interests in traditionally underfunded research fields (e.g. environmental policy and justice) will likely find it difficult to obtain access to similar "big" sales transaction data in the immediate future.
+Similar datasets are available from other real estate data aggregators. However, high price tags mean that access to such data is out of reach for most small research teams: nationwide datasets can cost ≥$50K for a single research project and ≥$100K for a multi-project license.
 
 
 **********************
@@ -56,5 +56,6 @@ We obtain several attributes from the transaction data:
 Linkage to parcels
 ******************
 
-Transactions and parcels have a "many-to-many" (:math:`n-m`) relationship. Each transaction can have multiple parcels and each parcel can transact more than once. Linkages between parcels and sales are based on a separate table of :any:`sid` - :any:`pid` links.
+Transactions and parcels have a "many-to-many" (:math:`n-m`) relationship. Each transaction can have multiple parcels and each parcel can transact more than once.
 
+Linkages between parcels and sales are therefore saved in separate tables containing parcel identifiers (:any:`pid`) and sales transaction identifiers (:any:`sid`).

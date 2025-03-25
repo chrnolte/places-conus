@@ -1,11 +1,11 @@
 Predictors
 ==========
 
-This is the full list of :ref:`parcel <Parcels>`-level variables used as :ref:`predictors <Predictors>` or :ref:`sampling <Samples>` filters for our :ref:`models <Models>` of fair market value (FMV).
+This is the full list of :ref:`parcel <Parcels>`-level variables used as :ref:`predictors <Predictors>` and :ref:`sampling <Samples>` filters for our :ref:`models <Models>` of fair market value (FMV).
 
-These variables are derived from geospatial :ref:`parcel boundaries <Parcels>` and publicly available geodata.
+These variables are derived from geospatial :ref:`parcel boundaries <Parcels>` and publicly available geospatal datasets.
 
-In addition to the variables listed below, we derive a few predictors directly from :any:`parcels boundaries <Parcels>` (geolocation: :any:`lat_id`, :any:`long_id` and size: :any:`ha`) or :any:`transactions <Transactions>` (:any:`date` of sale).
+In addition to the variables listed here, we obtain some predictors from :any:`parcel boundaries <Parcel boundaries>` (geolocation and size: :any:`lat_id`, :any:`long_id`, :any:`ha`) or :any:`transactions <Transactions>` (:any:`date` of sale).
 
 
 *******
@@ -226,7 +226,7 @@ Alternative measures of building presence are available in tax assessor and parc
 
 .. aluna:aluna:: p_bld_fp_*
 
-   Percentage of area within the given ``radius`` (integer, meters) that is covered by building footprints. An indicator of nearby building density.
+   Percentage of area within the given radius (``*``, integer, in meters) that is covered by building footprints. An indicator of nearby building density.
 
    :Geoprocessing: rasterization of building footprints, pixel-based computation of average building footprint presence within circular neighborhood (2D convolution with moving-window kernel), averaged across all pixels within each parcel (zonal statistics).
 
@@ -412,13 +412,15 @@ Spatial reference units, ordered from those with few units (U.S. states) to thos
 
    Region identifier.
 
-   :any:`Core-based regions` are an experimental geographic identifier developed at the :any:`PLACES` lab. Regions divide the contiguous U.S. into less than 1000 spatial units that are identified by their high-value "core" (city centers, resorts).
+   :any:`Core-based regions` are an experimental geographic identifier developed at the :any:`PLACES` lab.
+
+   Regions divide the contiguous U.S. into less than 1000 spatial units that are identified by their high-value "core" (city centers, resorts).
 
    We prefer modeling at the level of regions rather than counties or states, as the latter vary substantially in size and number across the U.S. geography.
 
    :Geoprocessing: Spatial intersection with parcel centroids
 
-   Find out more:
+   Learn more:
 
    .. toctree::
       :maxdepth: 1
@@ -429,19 +431,19 @@ Spatial reference units, ordered from those with few units (U.S. states) to thos
 
    U.S. county, identified by its five-digit county FIPS code (e.g. ``06037`` for Los Angeles county, California)
 
-   :Source: see :any:`state`
+   :Source: NHGIS (see :any:`state`)
 
 .. attribute:: zip_id
 
    ZIP code, 2016
 
-   :Source: see :any:`state`
+   :Source: NHGIS (see :any:`state`)
 
 .. attribute:: tract_id
 
    Census tract identifier, 2016
 
-   :Source: see :any:`state`
+   :Source: NHGIS (see :any:`state`)
 
 .. attribute:: bg_id
 
@@ -449,6 +451,6 @@ Spatial reference units, ordered from those with few units (U.S. states) to thos
 
    Unique within county.
 
-   :Source: see :any:`state`
+   :Source: NHGIS (see :any:`state`)
 
 

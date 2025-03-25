@@ -1,7 +1,7 @@
 Samples
 =======
 
-Samples define the sets of property transaction records that are used to train :any:`models <Models>`.
+Samples define the sets of **property transaction records** that are used to train :any:`models <Models>`.
 
 Samples contain sales prices (the dependent variable) and :any:`predictors <Predictor sets>`.
 

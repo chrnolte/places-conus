@@ -20,7 +20,7 @@ Regions
 
 Regions refer to :ref:`core-based regions <Core-based regions>`, an experimental spatial unit created at the PLACES lab.
 
-Regions are "grown" from high-value cores (cities, resorts) and meet at lower-value boundaries  (:ref:`data & methods <Core-based regions>`).
+Regions are "grown" from high-value cores (cities, resorts) and meet at lower-value boundaries (see :ref:`data & methods <Core-based regions>`).
 
 We prefer regions to counties or states for the purpose of fitting, comparing, and interpreting land value models. Official administrative units (counties, states) vary dramatically in their size and internal heterogeneity. Regions have similar sizes and comparable spatial compositions (cores and periphery).
 
@@ -63,7 +63,7 @@ County & neighbors
 
 "County & neighbors" models are fit on sales data of each county and its neighboring counties. Neighboring counties are counties whose boundaries are located within 10km or less of the boundaries of the target county.
 
-County-level models with neighbors formed the basis of our first published high-resolution land value map (`Nolte (2020) PNAS <https://doi.org/10.5061/dryad.np5hqbzq9>`_).
+County-level models with neighbors formed the basis of our first published high-resolution land value map (`article <https://www.pnas.org/doi/10.1073/pnas.2012865117>`_, `data download <https://doi.org/10.5061/dryad.np5hqbzq9>`_).
 
 :Identifier: ``county-nb`` or 5-digit county FIPS code (:any:`fips`) with :code:`-nb` suffix.
 
@@ -74,7 +74,7 @@ County-level models with neighbors formed the basis of our first published high-
 States
 ******
 
-State models are based on sales data from one state.
+State models are based on sales data from a single state.
 
 :Identifier: ``state`` or 2-letter state Alpha code (:any:`state`)
 :Example: ``CA`` is California

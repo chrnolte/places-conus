@@ -3,7 +3,7 @@ Data products
 
 This is the user guide to the PLACES-FMV (CONUS) **data products**.
 
-A release of these data is planned for early 2024 through `ICPSR <https://www.icpsr.umich.edu/web/pages/>`_ (:ref:`how to access <Access>`)
+A release of these data is planned for summer 2025 through `ICPSR <https://www.icpsr.umich.edu/web/pages/>`_ (:ref:`how to access <Access>`)
 
 Preliminary versions are available to :ref:`early adopters <Early adopters>`.
 
